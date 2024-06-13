@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Restaurant extends Model
 {
 
+    protected $fillable = ['name', 'address', 'phone_number', 'vat', 'image', 'mail', 'user_id'];
+
 
     /**
      * Get the user that owns the Restaurant
