@@ -40,7 +40,7 @@
 
 
             <div class="mb-3">
-                <label for="phone_number" class="form-label">Nome</label>
+                <label for="phone_number" class="form-label">Numero di telefono</label>
                 <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
                     id="phone_number" aria-describedby="helpId" placeholder="" value="{{ old('phone_number') }}" />
                 @error('phone_number')

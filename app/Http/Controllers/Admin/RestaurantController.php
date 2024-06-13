@@ -6,6 +6,7 @@ use App\Models\Restaurant;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class RestaurantController extends Controller
 {
@@ -14,7 +15,10 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        $restaurant = Restaurant::all();
+        $user = auth()->user();
+
+        return view('admin.restaurants.index', compact('restaurant', 'user'));
     }
 
     /**
@@ -22,7 +26,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        
+
 
         return view('admin.restaurants.create');
     }
@@ -32,7 +36,13 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
-        dd($request);
+
+        $user = auth()->user();
+        $validated = $request->validated();
+        $validated['user_id'] = $user->id;
+        $restaurant = Restaurant::create($validated);
+
+        return to_route('admin.restaurants.index', compact('restaurant'));
     }
 
     /**
