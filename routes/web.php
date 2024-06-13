@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\RestaurantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
@@ -25,6 +26,7 @@ Route::middleware(['auth', 'verified'])
         // Put here all routes that needs to be protected by our authenticatio system
         // All routes need to share a common name and prefix and the middleware
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard'); //admin
+        Route::resource('restaurants', RestaurantController::class);
     });
 
 Route::middleware('auth')->group(function () {
