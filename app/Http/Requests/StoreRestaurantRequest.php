@@ -22,7 +22,13 @@ class StoreRestaurantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'address' => 'required|min:5|max:100',
+            'mail' => 'required|min:5|max:100|unique:restaurants,mail',
+            'phone_number' => 'required|min:5|max:15',
+            'vat' => 'required|min:10|max:20',
+            'name' => 'required|min:3|max:50',
+            'image' => 'nullable|max:255'
+            
         ];
     }
 }
