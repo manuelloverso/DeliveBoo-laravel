@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\StorePlateRequest;
 use App\Http\Requests\UpdatePlateRequest;
 use App\Models\Admin\Plate;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 
 class PlateController extends Controller
@@ -14,7 +15,11 @@ class PlateController extends Controller
      */
     public function index()
     {
-        return view('admin.plates.index');
+        $user = auth()->user();
+
+        $restaurant = $user->restaurant;
+        $plates = $restaurant->plates;
+        return view('admin.plates.index', compact('plates'));
     }
 
     /**
@@ -22,7 +27,7 @@ class PlateController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.plates.create');
     }
 
     /**
@@ -30,7 +35,19 @@ class PlateController extends Controller
      */
     public function store(StorePlateRequest $request)
     {
-        //
+        $user = auth()->user();
+        $restaurant = $user->restaurant;
+        $val_data = $request->validated();
+        $val_data['restaurant_id'] = $restaurant->id;
+
+
+        if ($request->has('image')) {
+            $img_path = Storage::put('uploads', $val_data['image']);
+            $val_data['image'] = $img_path;
+        }
+
+        Plate::create($val_data);
+        return to_route('admin.plates.index')->with('message', "Piatto creato correttamente.");
     }
 
     /**
@@ -46,7 +63,7 @@ class PlateController extends Controller
      */
     public function edit(Plate $plate)
     {
-        //
+        return view('admin.plates.edit', compact('plate'));
     }
 
     /**
@@ -54,7 +71,20 @@ class PlateController extends Controller
      */
     public function update(UpdatePlateRequest $request, Plate $plate)
     {
-        //
+        $val_data = $request->validated();
+
+        if ($request->has('image')) {
+            //check if the plate already had another image
+            if ($plate->image) {
+                //if so we delete it
+                Storage::delete($plate->image);
+            }
+            $img_path = Storage::put('uploads', $val_data['image']);
+            //dd($validated, $image_path);
+            $val_data['image'] = $img_path;
+        }
+        $plate->update($val_data);
+        return to_route('admin.plates.index')->with('message', 'Piatto aggiornato correttamente.');
     }
 
     /**
@@ -62,6 +92,10 @@ class PlateController extends Controller
      */
     public function destroy(Plate $plate)
     {
-        //
+        if($plate->image){
+            Storage::delete($plate->image);
+        }
+        $plate->delete();
+        return to_route('admin.plates.index')->with('message', "$plate->name è stato cancellato.");
     }
 }

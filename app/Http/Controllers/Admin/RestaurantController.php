@@ -15,10 +15,10 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurant = Restaurant::all();
+        
         $user = auth()->user();
 
-        return view('admin.restaurants.index', compact('restaurant', 'user'));
+        return view('admin.dashboard', compact('user'));
     }
 
     /**
