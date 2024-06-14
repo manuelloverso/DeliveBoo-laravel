@@ -11,7 +11,7 @@ class StorePlateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StorePlateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|max:50',
+            'image' => 'nullable|image|max:5000',
+            'description' => 'nullable|max:600',
+            'price' => 'required|numeric|max:1000|decimal:2',
+            'is_visible' => 'nullable|boolean',
+
         ];
     }
 }

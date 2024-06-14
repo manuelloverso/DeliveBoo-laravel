@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\StorePlateRequest;
 use App\Http\Requests\UpdatePlateRequest;
 use App\Models\Admin\Plate;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 
 class PlateController extends Controller
@@ -14,7 +15,8 @@ class PlateController extends Controller
      */
     public function index()
     {
-        return view('admin.plates.index');
+        $plates = Plate::all();
+        return view('admin.plates.index', compact('plates'));
     }
 
     /**
@@ -22,7 +24,7 @@ class PlateController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.plates.create');
     }
 
     /**
@@ -30,7 +32,19 @@ class PlateController extends Controller
      */
     public function store(StorePlateRequest $request)
     {
-        //
+        $user = auth()->user();
+        $restaurant = $user->restaurant;
+        $val_data = $request->validated();
+        $val_data['restaurant_id'] = $restaurant->id;
+
+
+        if ($request->has('image')) {
+            $img_path = Storage::put('uploads', $val_data['image']);
+            $val_data['image'] = $img_path;
+        }
+
+        Plate::create($val_data);
+        return to_route('admin.plates.index');
     }
 
     /**

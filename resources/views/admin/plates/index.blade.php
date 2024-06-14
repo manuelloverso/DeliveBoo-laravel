@@ -3,6 +3,8 @@
 @section('content')
     <div class="container">
 
-        Piatti
+        @foreach ($plates as $plate)
+            <h1>{{ $plate->name }}</h1>
+        @endforeach
     </div>
 @endsection

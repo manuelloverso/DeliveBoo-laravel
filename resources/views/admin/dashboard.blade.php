@@ -34,8 +34,7 @@
                             <a class="text-decoration-none btn btn-primary" href="{{ route('admin.plates.index') }}">
                                 Piatti
                             </a>
-                            <a class="text-decoration-none btn btn-primary"
-                                href="{{ route('admin.restaurants.show', $user->restaurant) }}">
+                            <a class="text-decoration-none btn btn-primary" href="{{ route('admin.plates.create') }}">
                                 Crea Nuovo Piatto
                             </a>
                             <a class="text-decoration-none btn btn-primary"
