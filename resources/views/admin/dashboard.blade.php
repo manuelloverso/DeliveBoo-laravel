@@ -1,59 +1,63 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container py-4">
-        @include('partials.message-error')
+    <div class="dashboard">
+        <div class=" container py-4">
+            @include('partials.message-error')
 
-        @if ($user->restaurant)
-            <div class="row">
+            @if ($user->restaurant)
+                <div class="row">
 
-                <div class="card col-12 col-lg-8 m-auto ">
+                    <div class="card col-12 col-lg-6 m-auto rounded-3 ">
 
-                    <div class="card-image">
-                        <img class="w-100 p-1 " src="{{ $user->restaurant->image }}" alt="">
-                    </div>
-                    <div class="card-body d-flex justify-content-between">
+                        <div class="card-image">
+                            <img class="w-100 rounded-top-3 " src="{{ $user->restaurant->image }}" alt="">
+                        </div>
+                        <div class="card-body d-flex justify-content-between  p-5">
 
-                        <div>
-                            <h1>{{ $user->restaurant->name }}</h1>
-
-                            <div class="div">
-                                Indirizzo: {{ $user->restaurant->address }}
-                            </div>
                             <div>
-                                e-mail: {{ $user->restaurant->mail }}
+                                <h1>{{ $user->restaurant->name }}</h1>
+
+                                <div class="py-2">
+                                    <i class="fa-solid fa-location-dot"></i> {{ $user->restaurant->address }}
+                                </div>
+                                <div class="py-2">
+                                    <i class="fa-solid fa-at"></i> {{ $user->restaurant->mail }}
+                                </div>
+                                <div class="py-2">
+                                    <i class="fa-solid fa-phone"></i> {{ $user->restaurant->phone_number }}
+                                </div>
+                                <div class="py-2">
+                                    <strong>PI:</strong> {{ $user->restaurant->vat }}
+                                </div>
                             </div>
-                            <div>
-                                Tel: {{ $user->restaurant->phone_number }}
-                            </div>
-                            <div>
-                                PI: {{ $user->restaurant->vat }}
+                            <div class="d-flex flex-column gap-3 align-self-end">
+                                <div class="py-1">
+                                    <a class="text-decoration-none btn btn-lg btn_yellow" href="{{ route('admin.plates.index') }}">
+                                        Menu
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="text-decoration-none btn btn-lg  btn_yellow"
+                                        href="{{ route('admin.restaurants.show', $user->restaurant) }}">
+                                        Statistiche Vendite
+                                    </a>
+                                    <a class="text-decoration-none btn btn-lg  btn_orange"
+                                        href="{{ route('admin.restaurants.show', $user->restaurant) }}">
+                                        Ordini
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex flex-column gap-2">
-                            <a class="text-decoration-none btn btn-primary" href="{{ route('admin.plates.index') }}">
-                                Piatti
-                            </a>
-                            <a class="text-decoration-none btn btn-primary" href="{{ route('admin.plates.create') }}">
-                                Crea Nuovo Piatto
-                            </a>
-                            <a class="text-decoration-none btn btn-primary"
-                                href="{{ route('admin.restaurants.show', $user->restaurant) }}">
-                                Statistiche
-                            </a>
-                            <a class="text-decoration-none btn btn-warning"
-                                href="{{ route('admin.restaurants.show', $user->restaurant) }}">
-                                Ordini
-                            </a>
-                        </div>
+
                     </div>
                 </div>
-            </div>
-        @else
-            <a class="btn btn-primary" href="{{ route('admin.restaurants.create') }}">
-                Crea il tuo ristorante!
-            </a>
-        @endif
+            @else
+                <a class="btn btn-primary" href="{{ route('admin.restaurants.create') }}">
+                    Crea il tuo ristorante!
+                </a>
+            @endif
 
+        </div>
     </div>
 @endsection
