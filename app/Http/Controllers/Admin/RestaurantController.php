@@ -26,7 +26,10 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-
+        $user = auth()->user();
+        if ($user->restaurant) {
+            return to_route('admin.dashboard')->with('message', 'Hai già un ristorante collegato');
+        }
 
         return view('admin.restaurants.create');
     }
@@ -36,13 +39,12 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
-
         $user = auth()->user();
         $validated = $request->validated();
         $validated['user_id'] = $user->id;
-        $restaurant = Restaurant::create($validated);
+        Restaurant::create($validated);
 
-        return to_route('admin.restaurants.index', compact('restaurant'));
+        return to_route('admin.dashboard', compact('user'));
     }
 
     /**
@@ -50,7 +52,7 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
