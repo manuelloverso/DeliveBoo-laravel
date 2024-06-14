@@ -47,7 +47,7 @@ class PlateController extends Controller
         }
 
         Plate::create($val_data);
-        return to_route('admin.plates.index');
+        return to_route('admin.plates.index')->with('message', "Piatto creato correttamente.");
     }
 
     /**
@@ -84,7 +84,7 @@ class PlateController extends Controller
             $val_data['image'] = $img_path;
         }
         $plate->update($val_data);
-        return to_route('admin.plates.index')->with('message', 'Piatto aggiornato correttamente');
+        return to_route('admin.plates.index')->with('message', 'Piatto aggiornato correttamente.');
     }
 
     /**
@@ -92,6 +92,10 @@ class PlateController extends Controller
      */
     public function destroy(Plate $plate)
     {
-        //
+        if($plate->image){
+            Storage::delete($plate->image);
+        }
+        $plate->delete();
+        return to_route('admin.plates.index')->with('message', "$plate->name è stato cancellato.");
     }
 }
