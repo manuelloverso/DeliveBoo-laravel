@@ -2,16 +2,17 @@
 
 @section('content')
     <div class="container py-4">
-        <h1>Add a new plate</h1>
+        <h1>Edit {{ $plate->name }}</h1>
         @include('partials.validation-errors')
-        <form action="{{ route('admin.plates.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.plates.update', $plate) }}" method="post" enctype="multipart/form-data">
+            @method('PUT')
             @csrf {{-- this is a laravel directive to protect your application from cross-site request forgery --}}
 
             {{-- name input --}}
             <div class="mb-3">
-                <label for="name" class="form-label">name</label>
+                <label for="name" class="form-label">Name</label>
                 <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror"
-                    placeholder="add the name" value="{{ old('name') }}" />
+                    placeholder="add the name" value="{{ old('name', $plate->name) }}" />
                 @error('name')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -46,7 +47,7 @@
             <div class="mb-3">
                 <label for="description" class="form-label ">Description</label>
                 <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
-                    rows="5" placeholder="add the description">{{ old('description') }}</textarea>
+                    rows="5" placeholder="add the description">{{ old('description', $plate->description) }}</textarea>
                 @error('description')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -54,10 +55,10 @@
 
             {{-- price input --}}
             <div class="mb-3">
-                <label for="price" class="form-label">price</label>
+                <label for="price" class="form-label">Price</label>
                 <input type="text" name="price" id="price"
                     class="form-control @error('price') is-invalid @enderror" placeholder="add the price"
-                    value="{{ old('price') }}" />
+                    value="{{ old('price', $plate->price) }}" />
                 @error('price')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
