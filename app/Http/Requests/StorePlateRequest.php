@@ -27,7 +27,6 @@ class StorePlateRequest extends FormRequest
             'description' => 'nullable|max:600',
             'price' => 'required|numeric|max:1000|decimal:2',
             'is_visible' => 'nullable|boolean',
-
         ];
     }
 }

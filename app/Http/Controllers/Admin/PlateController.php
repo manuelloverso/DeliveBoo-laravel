@@ -15,7 +15,10 @@ class PlateController extends Controller
      */
     public function index()
     {
-        $plates = Plate::orderByDesc('id')->get();
+        $user = auth()->user();
+
+        $restaurant = $user->restaurant;
+        $plates = $restaurant->plates;
         return view('admin.plates.index', compact('plates'));
     }
 
@@ -60,7 +63,7 @@ class PlateController extends Controller
      */
     public function edit(Plate $plate)
     {
-        //
+        return view('admin.plates.edit', compact('plate'));
     }
 
     /**
@@ -68,7 +71,20 @@ class PlateController extends Controller
      */
     public function update(UpdatePlateRequest $request, Plate $plate)
     {
-        //
+        $val_data = $request->validated();
+
+        if ($request->has('image')) {
+            //check if the plate already had another image
+            if ($plate->image) {
+                //if so we delete it
+                Storage::delete($plate->image);
+            }
+            $img_path = Storage::put('uploads', $val_data['image']);
+            //dd($validated, $image_path);
+            $val_data['image'] = $img_path;
+        }
+        $plate->update($val_data);
+        return to_route('admin.plates.index')->with('message', 'Piatto aggiornato correttamente');
     }
 
     /**
