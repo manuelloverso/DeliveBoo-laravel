@@ -1,1 +1,11 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+nav {
+    padding: 0!important;
+}
+.bg_orange{
+    background-color: rgb(255, 157, 0);
+}
+
+.nav-logo{
+    width: 130px;
+}
