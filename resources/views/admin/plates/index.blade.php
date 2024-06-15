@@ -4,10 +4,15 @@
     <div class="container py-4">
         @include('partials.message-action')
 
-        <a class="btn btn-success mb-4" href="{{ route('admin.plates.create') }}">Aggiungi un piatto</a>
+        <div class="d-flex mb-4 gap-2">
+            <a class="btn btn-success" href="{{ route('admin.plates.create') }}">Aggiungi un piatto</a>
+            <a class="btn btn-secondary" href="{{ route('admin.dashboard') }}">Indietro</a>
+
+        </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
             @foreach ($plates as $plate)
+       
                 <div class="col">
                     <div class="card card-body">
 
@@ -53,6 +58,8 @@
                         </div>
                     </div>
                 </div>
+
+            
             @endforeach
 
         </div>
@@ -60,24 +67,4 @@
 @endsection
 
 
-<style>
-    .col {
-        margin-bottom: 2rem;
 
-        .card {
-            background-color: black;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-
-            img {
-                height: 200px;
-                object-fit: cover;
-
-            }
-
-        }
-
-    }
-</style>
