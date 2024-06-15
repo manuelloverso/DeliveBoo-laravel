@@ -71,8 +71,9 @@ class PlateController extends Controller
      */
     public function update(UpdatePlateRequest $request, Plate $plate)
     {
+        
         $val_data = $request->validated();
-
+        
         if ($request->has('image')) {
             //check if the plate already had another image
             if ($plate->image) {
