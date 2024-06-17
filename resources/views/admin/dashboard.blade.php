@@ -11,7 +11,13 @@
                     <div class="card col-12 col-lg-6 m-auto rounded-3 ">
 
                         <div class="card-image">
-                            <img class="w-100 rounded-top-3 " src="{{ $user->restaurant->image }}" alt="">
+                            @if (Str::startsWith($user->restaurant->image, 'https://'))
+                                <img loading="lazy" class="w-100 rounded-top-3 " src="{{ $user->restaurant->image }}"
+                                    alt="">
+                            @else
+                                <img loading="lazy" class="w-100 rounded-top-3 "
+                                    src="{{ asset('storage/' . $user->restaurant->image) }}" alt="">
+                            @endif
                         </div>
                         <div class="card-body d-flex justify-content-between  p-5">
 
@@ -33,7 +39,8 @@
                             </div>
                             <div class="d-flex flex-column gap-3 align-self-end">
                                 <div class="py-1">
-                                    <a class="text-decoration-none btn btn-lg btn_yellow" href="{{ route('admin.plates.index') }}">
+                                    <a class="text-decoration-none btn btn-lg btn_yellow"
+                                        href="{{ route('admin.plates.index') }}">
                                         Menu
                                     </a>
                                 </div>

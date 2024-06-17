@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StorePlateRequest;
 use App\Http\Requests\UpdatePlateRequest;
-use App\Models\Admin\Plate;
+use App\Models\Plate;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 
