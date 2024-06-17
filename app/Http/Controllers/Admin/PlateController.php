@@ -61,7 +61,7 @@ class PlateController extends Controller
      */
     public function show(Plate $plate)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -69,7 +69,17 @@ class PlateController extends Controller
      */
     public function edit(Plate $plate)
     {
-        return view('admin.plates.edit', compact('plate'));
+        $user = auth()->user();
+        $restaurant = $user->restaurant;
+        // dd($restaurant->plates);
+
+        if($restaurant->plates->contains($plate)){
+            return view('admin.plates.edit', compact('plate'));
+        }else {
+            abort(404);
+
+        }
+
     }
 
     /**
