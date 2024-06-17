@@ -43,6 +43,7 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
+
         $user = auth()->user();
         $validated = $request->validated();
         $validated['user_id'] = $user->id;
@@ -65,7 +66,7 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-   
+
         abort(404);
     }
 
