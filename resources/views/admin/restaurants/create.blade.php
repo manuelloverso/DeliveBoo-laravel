@@ -76,7 +76,7 @@
             </div> --}}
 
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary" onclick="form.submit(); disabled=true;">
                 Crea il tuo ristorante
             </button>
 

@@ -22,8 +22,8 @@
                 <div class="form-check">
                     <label class="form-check-label" for="is_visible"> Is visible
                     </label>
-                    <input name="is_visible" class="form-check-input" type="checkbox" value="{{ true }} id="is_visible"
-                        {{ old('is_visible') ? 'checked' : '' }} />
+                    <input name="is_visible" class="form-check-input" type="checkbox"
+                        value="{{ true }} id="is_visible" {{ old('is_visible') ? 'checked' : '' }} />
                 </div>
             </div>
             @error('is_visible')
@@ -63,7 +63,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary" onclick="form.submit(); disabled=true;">
                 Submit
             </button>
             {{-- <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">Back</a> --}}
