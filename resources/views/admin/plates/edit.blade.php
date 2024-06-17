@@ -18,8 +18,9 @@
             {{-- name input --}}
             <div class="mb-3">
                 <label for="name" class="form-label">Nome del piatto</label>
-                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror"
-                    placeholder="aggiungi il nome del piatto" value="{{ old('name', $plate->name) }}" />
+                <input required type="text" name="name" id="name"
+                    class="form-control @error('name') is-invalid @enderror" placeholder="aggiungi il nome del piatto"
+                    value="{{ old('name', $plate->name) }}" />
                 @error('name')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -85,7 +86,7 @@
             {{-- price input --}}
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input type="text" name="price" id="price"
+                <input required type="text" name="price" id="price"
                     class="form-control @error('price') is-invalid @enderror" placeholder="00.00"
                     value="{{ old('price', $plate->price) }}" />
                 @error('price')

@@ -17,8 +17,9 @@
             {{-- name input --}}
             <div class="mb-3">
                 <label for="name" class="form-label">Nome</label>
-                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror"
-                    placeholder="aggiungi il nome del piatto" value="{{ old('name') }}" />
+                <input type="text" required name="name" id="name"
+                    class="form-control @error('name') is-invalid @enderror" placeholder="aggiungi il nome del piatto"
+                    value="{{ old('name') }}" />
                 @error('name')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -71,7 +72,7 @@
             {{-- price input --}}
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input type="text" name="price" id="price"
+                <input required type="text" name="price" id="price"
                     class="form-control @error('price') is-invalid @enderror" placeholder="00.00"
                     value="{{ old('price') }}" />
                 @error('price')
@@ -82,7 +83,6 @@
             <button type="submit" class="btn btn-primary" onclick="form.submit(); disabled=true;">
                 Aggiungi
             </button>
-            {{-- <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">Back</a> --}}
 
         </form>
     </div>
