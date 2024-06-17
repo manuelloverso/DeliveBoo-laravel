@@ -19,7 +19,7 @@ class PlateController extends Controller
         $user = auth()->user();
 
         $restaurant = $user->restaurant;
-        
+
         $plates = $restaurant->plates->sortByDesc('id');
         return view('admin.plates.index', compact('plates'));
     }
@@ -52,7 +52,8 @@ class PlateController extends Controller
         $slug = Str::slug($request->name, '-');
         $val_data['slug'] = $slug;
 
-        Plate::create($val_data);
+        $plate = Plate::create($val_data);
+        /* $plate->redirect->GET(); */
         return to_route('admin.plates.index')->with('message', "Piatto creato correttamente.");
     }
 
@@ -73,13 +74,11 @@ class PlateController extends Controller
         $restaurant = $user->restaurant;
         // dd($restaurant->plates);
 
-        if($restaurant->plates->contains($plate)){
+        if ($restaurant->plates->contains($plate)) {
             return view('admin.plates.edit', compact('plate'));
-        }else {
+        } else {
             abort(404);
-
         }
-
     }
 
     /**
