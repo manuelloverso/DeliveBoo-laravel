@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('plates', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            $table->string('slug', 50);
             $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->decimal('price', 5, 2);
