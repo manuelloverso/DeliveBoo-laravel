@@ -18,7 +18,8 @@ class PlateController extends Controller
         $user = auth()->user();
 
         $restaurant = $user->restaurant;
-        $plates = $restaurant->plates;
+        
+        $plates = $restaurant->plates->sortByDesc('id');
         return view('admin.plates.index', compact('plates'));
     }
 
