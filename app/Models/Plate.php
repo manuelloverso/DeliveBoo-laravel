@@ -11,7 +11,7 @@ class Plate extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'image', 'description', 'price', 'is_visible', 'restaurant_id'];
+    protected $fillable = ['name', 'slug', 'image', 'description', 'price', 'is_visible', 'restaurant_id'];
 
     /**
      * Get the user that owns the Project

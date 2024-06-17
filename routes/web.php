@@ -29,7 +29,7 @@ Route::middleware(['auth', 'verified'])
         // All routes need to share a common name and prefix and the middleware
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard'); //admin
         Route::resource('restaurants', RestaurantController::class);
-        Route::resource('plates', PlateController::class);
+        Route::resource('plates', PlateController::class)->parameters(['plates' => 'plate:slug']);
     });
 
 /* Route::middleware('auth')->group(function () {

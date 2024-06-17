@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatePlateRequest;
 use App\Models\Plate;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class PlateController extends Controller
 {
@@ -48,6 +49,9 @@ class PlateController extends Controller
             $val_data['image'] = $img_path;
         }
 
+        $slug = Str::slug($request->name, '-');
+        $val_data['slug'] = $slug;
+
         Plate::create($val_data);
         return to_route('admin.plates.index')->with('message', "Piatto creato correttamente.");
     }
@@ -80,15 +84,22 @@ class PlateController extends Controller
         }
 
         if ($request->has('image')) {
+
             //check if the plate already had another image
             if ($plate->image) {
                 //if so we delete it
                 Storage::delete($plate->image);
             }
+
             $img_path = Storage::put('uploads', $val_data['image']);
             //dd($validated, $image_path);
             $val_data['image'] = $img_path;
         }
+
+
+        $slug = Str::slug($request->name, '-');
+        $val_data['slug'] = $slug;
+
         $plate->update($val_data);
         return to_route('admin.plates.index')->with('message', 'Piatto aggiornato correttamente.');
     }
