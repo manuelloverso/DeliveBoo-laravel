@@ -6,6 +6,8 @@ use App\Models\Restaurant;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Type;
+use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 
 class RestaurantController extends Controller
@@ -15,7 +17,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        
+
         $user = auth()->user();
 
         return view('admin.dashboard', compact('user'));
@@ -31,7 +33,9 @@ class RestaurantController extends Controller
             return to_route('admin.dashboard')->with('message', 'Hai già un ristorante collegato');
         }
 
-        return view('admin.restaurants.create');
+        $types = Type::all();
+
+        return view('admin.restaurants.create', compact('types'));
     }
 
     /**
@@ -42,7 +46,16 @@ class RestaurantController extends Controller
         $user = auth()->user();
         $validated = $request->validated();
         $validated['user_id'] = $user->id;
-        Restaurant::create($validated);
+
+        if ($request->has('image')) {
+            $img_path = Storage::put('uploads', $validated['image']);
+            $validated['image'] = $img_path;
+        }
+        $restaurant = Restaurant::create($validated);
+
+        if ($request->has('types')) {
+            $restaurant->types()->attach($validated['types']);
+        }
 
         return to_route('admin.dashboard', compact('user'));
     }

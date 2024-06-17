@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container py-4">
 
 
         @include('partials.validation-errors')
@@ -59,21 +59,32 @@
             </div>
 
 
+            {{-- Types input --}}
+            <label for="types" class="form-label">Tipologia</label>
+            <div class="mb-3 d-flex gap-4">
+                @foreach ($types as $type)
+                    <div class="form-check">
+                        <input name="types[]" class="form-check-input" type="checkbox" value="{{ $type->id }}"
+                            id="type-{{ $type->id }}" {{ in_array($type->id, old('types', [])) ? 'checked' : '' }} />
+                        <label class="form-check-label" for="type-{{ $type->id }}"> {{ $type->name }}
+                        </label>
+                    </div>
+                @endforeach
+            </div>
+            @error('types')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+
+
+            {{-- Image input --}}
             <div class="mb-3">
-                <label for="image" class="form-label">Immagine del tuo ristorante</label>
-                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image" aria-describedby="helpId" placeholder="" value="{{ old('image') }}" />
+                <label for="image" class="form-label">Image</label>
+                <input type="file" name="image" id="image"
+                    class="form-control  @error('image') is-invalid @enderror" placeholder="add an image" />
                 @error('image')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-
-
-            {{-- <div class="mb-3">
-                <label for="image" class="form-label">Inserisci foto</label>
-                <input type="file" class="form-control" name="image" id="image" placeholder=""
-                    aria-describedby="fileHelpId" />
-            </div> --}}
 
 
             <button type="submit" class="btn btn-primary" onclick="form.submit(); disabled=true;">
