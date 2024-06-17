@@ -25,7 +25,7 @@ class RestaurantSeeder extends Seeder
             $newRestaurant->image = $restaurant['image'];
             $newRestaurant->user_id = $restaurant['user_id'];
             $newRestaurant->save();
-            /* $newRestaurant->types()->attach(1); */
+            $newRestaurant->types()->attach($restaurant['types']);
         }
     }
 }
