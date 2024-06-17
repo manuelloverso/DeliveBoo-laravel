@@ -46,13 +46,12 @@ class RestaurantController extends Controller
         $user = auth()->user();
         $validated = $request->validated();
         $validated['user_id'] = $user->id;
-        $img_path = Storage::put('uploads', $validated['image']);
-        dd($validated);
-        $restaurant = Restaurant::create($validated);
 
         if ($request->has('image')) {
+            $img_path = Storage::put('uploads', $validated['image']);
             $validated['image'] = $img_path;
         }
+        $restaurant = Restaurant::create($validated);
 
         if ($request->has('types')) {
             $restaurant->types()->attach($validated['types']);
