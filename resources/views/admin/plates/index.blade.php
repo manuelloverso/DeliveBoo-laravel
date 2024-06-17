@@ -5,8 +5,9 @@
         @include('partials.message-action')
 
         <div class="d-flex mb-4 gap-2">
+            <a class="btn btn-secondary" href="{{ route('admin.dashboard') }}"><i class="fa fa-arrow-circle-left"
+                    aria-hidden="true"></i></a>
             <a class="btn btn-success" href="{{ route('admin.plates.create') }}">Aggiungi un piatto</a>
-            <a class="btn btn-secondary" href="{{ route('admin.dashboard') }}">Indietro</a>
 
         </div>
 
