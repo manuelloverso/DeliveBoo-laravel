@@ -14,11 +14,13 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        $types = ['Internazionale', 'Italiano', 'Cinese', 'Sushi', 'Indiano', 'Messicano', 'Fast Food', 'Pizzeria', 'Pesce', 'Carne'];
+       
+        $types = config('types_db.types');
 
         foreach ($types as $type) {
             $newType = new Type();
-            $newType->name = $type;
+            $newType->name = $type['name'];
+            $newType->image = $type['image'];
             $newType->save();
         }
     }

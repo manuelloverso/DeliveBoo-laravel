@@ -22,8 +22,8 @@
                     <div class="card-body d-flex justify-content-between  p-5">
 
                         <div>
-                            <h1>{{ $user->restaurant->name }}</h1>
 
+                            <h1>{{ $user->restaurant->name }}</h1>
                             <div class="py-2">
                                 <i class="fa-solid fa-location-dot"></i> {{ $user->restaurant->address }}
                             </div>
@@ -37,20 +37,31 @@
                                 <strong>PI:</strong> {{ $user->restaurant->vat }}
                             </div>
                         </div>
-                        <div class="d-flex flex-column gap-3 align-self-end">
-                            <div class="py-1">
-                                <a class="text-decoration-none btn btn-lg btn_yellow"
-                                    href="{{ route('admin.plates.index') }}">
-                                    Menu
-                                </a>
+
+                        <div class="d-flex flex-column gap-3 justify-content-between align-items-end">
+
+                            <div class="d-flex gap-2">
+                                @foreach ($user->restaurant->types as $type)
+                                        <div class="bg_orange-dark px-2 rounded text-white">{{ $type->name }}</div>
+                                    @endforeach
                             </div>
-                            <div>
-                                <a class="text-decoration-none btn btn-lg  btn_yellow" href="#">
-                                    Statistiche Vendite
-                                </a>
-                                <a class="text-decoration-none btn btn-lg  btn_orange" href="#">
-                                    Ordini
-                                </a>
+
+                            <div class="d-flex flex-column align-items-end">
+                                <div class="py-1">
+                                    <a class="text-decoration-none btn btn-lg btn_yellow"
+                                        href="{{ route('admin.plates.index') }}">
+                                        Menu
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="text-decoration-none btn btn-lg  btn_yellow" href="#">
+                                        Statistiche Vendite
+                                    </a>
+                                    <a class="text-decoration-none btn btn-lg  btn_orange" href="#">
+                                        Ordini
+                                    </a>
+                                </div>
+
                             </div>
                         </div>
                     </div>
