@@ -11,6 +11,8 @@
             <h1 class="">Aggiungi un nuovo piatto</h1>
         </div>
         @include('partials.validation-errors')
+        @include('partials.message-error')
+
         <form action="{{ route('admin.plates.store') }}" method="post" enctype="multipart/form-data">
             @csrf {{-- this is a laravel directive to protect your application from cross-site request forgery --}}
 

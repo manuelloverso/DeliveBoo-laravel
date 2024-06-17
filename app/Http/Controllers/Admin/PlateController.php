@@ -39,21 +39,33 @@ class PlateController extends Controller
     {
         $user = auth()->user();
         $restaurant = $user->restaurant;
-        $val_data = $request->validated();
-        $val_data['restaurant_id'] = $restaurant->id;
-        /* dd($val_data); */
+        $plates = $restaurant->plates;
+        $name_plates = [];
 
-
-        if ($request->has('image')) {
-            $img_path = Storage::put('uploads', $val_data['image']);
-            $val_data['image'] = $img_path;
+        foreach ($plates as $plate) {
+            //dd($plate->name);
+            array_push($name_plates, $plate->name);
         }
 
-        $slug = Str::slug($request->name, '-');
-        $val_data['slug'] = $slug;
+        //dd($name_plates);
 
-        $plate = Plate::create($val_data);
-        /* $plate->redirect->GET(); */
+        if (!in_array($request->name, $name_plates)) {
+            $val_data = $request->validated();
+            $val_data['restaurant_id'] = $restaurant->id;
+            /* dd($val_data); */
+            if ($request->has('image')) {
+                $img_path = Storage::put('uploads', $val_data['image']);
+                $val_data['image'] = $img_path;
+            }
+
+            $slug = Str::slug($request->name, '-');
+            $val_data['slug'] = $slug;
+
+            $plate = Plate::create($val_data);
+        } else {
+            return to_route('admin.plates.create')->with('message', "il nome del piatto già presente");
+        }
+
         return to_route('admin.plates.index')->with('message', "Piatto creato correttamente.");
     }
 
