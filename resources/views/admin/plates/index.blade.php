@@ -14,7 +14,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
             @foreach ($plates as $plate)
                 <div class="col">
-                    <div class="card card-body">
+                    <div class="card h-100 card-body">
 
                         <h5>{{ $plate->name }}</h5>
                         @if (Str::startsWith($plate->image, 'https://'))
