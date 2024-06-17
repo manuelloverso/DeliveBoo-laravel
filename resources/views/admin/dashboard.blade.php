@@ -46,11 +46,11 @@
                                 </div>
                                 <div>
                                     <a class="text-decoration-none btn btn-lg  btn_yellow"
-                                        href="{{ route('admin.restaurants.show', $user->restaurant) }}">
+                                        href="#">
                                         Statistiche Vendite
                                     </a>
                                     <a class="text-decoration-none btn btn-lg  btn_orange"
-                                        href="{{ route('admin.restaurants.show', $user->restaurant) }}">
+                                        href="#">
                                         Ordini
                                     </a>
                                 </div>
