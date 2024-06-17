@@ -5,7 +5,7 @@
         <div class=" container py-4">
             @include('partials.message-error')
 
-            @if ($user->restaurant)
+            {{-- @if ($user->restaurant) --}}
                 <div class="row">
 
                     <div class="card col-12 col-lg-6 m-auto rounded-3 ">
@@ -59,11 +59,11 @@
 
                     </div>
                 </div>
-            @else
+            {{-- @else
                 <a class="btn btn-primary" href="{{ route('admin.restaurants.create') }}">
                     Crea il tuo ristorante!
                 </a>
-            @endif
+            @endif --}}
 
         </div>
     </div>

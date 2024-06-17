@@ -2,9 +2,9 @@
 @section('content')
     <div class="container py-4">
 
+        <h1>Registra il tuo ristorante</h1>
 
         @include('partials.validation-errors')
-
 
         <form action="{{ route('admin.restaurants.store') }}" method="post" enctype="multipart/form-data">
             @csrf
