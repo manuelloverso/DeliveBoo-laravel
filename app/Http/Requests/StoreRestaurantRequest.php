@@ -28,7 +28,7 @@ class StoreRestaurantRequest extends FormRequest
             'vat' => 'required|min:10|max:20',
             'name' => 'required|min:3|max:50',
             'image' => 'nullable|image|max:6000',
-            'types' => 'exists:types,id',
+            'types' => 'required|exists:types,id',
             'user_id' => 'nullable|exists:user,id',
         ];
     }

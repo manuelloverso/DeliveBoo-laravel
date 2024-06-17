@@ -10,11 +10,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
+
         $types = Type::all();
         $user = auth()->user();
-        if ($user->restaurant){
+        if ($user->restaurant) {
             return view('admin.dashboard', compact('user'));
-        }else {
+        } else {
             return view('admin.restaurants.create', compact('types'));
         }
     }
