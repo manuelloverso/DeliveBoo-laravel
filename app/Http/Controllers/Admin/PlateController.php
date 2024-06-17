@@ -39,6 +39,7 @@ class PlateController extends Controller
         $restaurant = $user->restaurant;
         $val_data = $request->validated();
         $val_data['restaurant_id'] = $restaurant->id;
+        /* dd($val_data); */
 
 
         if ($request->has('image')) {
@@ -71,9 +72,12 @@ class PlateController extends Controller
      */
     public function update(UpdatePlateRequest $request, Plate $plate)
     {
-        
+
         $val_data = $request->validated();
-        
+        if (!$request->has('is_visible')) {
+            $val_data['is_visible'] = 0;
+        }
+
         if ($request->has('image')) {
             //check if the plate already had another image
             if ($plate->image) {
@@ -93,7 +97,7 @@ class PlateController extends Controller
      */
     public function destroy(Plate $plate)
     {
-        if($plate->image){
+        if ($plate->image) {
             Storage::delete($plate->image);
         }
         $plate->delete();

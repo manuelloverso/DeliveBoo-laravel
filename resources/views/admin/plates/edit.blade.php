@@ -24,15 +24,15 @@
                     <div class="form-check">
                         <label class="form-check-label" for="is_visible"> Is visible
                         </label>
-                        <input name="is_visible" class="form-check-input" type="checkbox" value="{{ true }}"
-                            id="is_visible" {{ old('is_visible') ? 'checked' : '' }} />
+                        <input name="is_visible" class="form-check-input" type="checkbox" value="1" id="is_visible"
+                            {{ old('is_visible') ? 'checked' : '' }} />
                     </div>
                 @else
                     <div class="form-check">
                         <label class="form-check-label" for="is_visible"> Is visible
                         </label>
-                        <input name="is_visible" class="form-check-input" type="checkbox" value="{{ true }}"
-                            id="is_visible" {{ $plate->is_visible ? 'checked' : '' }} />
+                        <input name="is_visible" class="form-check-input" type="checkbox" value="1" id="is_visible"
+                            {{ $plate->is_visible ? 'checked' : '' }} />
                     </div>
                 @endif
             </div>
