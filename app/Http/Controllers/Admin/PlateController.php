@@ -80,12 +80,12 @@ class PlateController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Plate $plate)
+    public function edit($id)
     {
+        $plate = Plate::find($id);
         $user = auth()->user();
         $restaurant = $user->restaurant;
         // dd($restaurant->plates);
-
         if ($restaurant->plates->contains($plate)) {
             return view('admin.plates.edit', compact('plate'));
         } else {
@@ -128,8 +128,9 @@ class PlateController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Plate $plate)
+    public function destroy($id)
     {
+        $plate = Plate::find($id);
         if ($plate->image) {
             Storage::delete($plate->image);
         }
