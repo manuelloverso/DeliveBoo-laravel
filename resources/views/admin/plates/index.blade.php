@@ -25,7 +25,8 @@
                         @endif
                         <div><strong>Prezzo: </strong>{{ $plate->price }}€</div>
                         <div class="d-flex justify-content-around">
-                            <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate) }}">Modifica piatto</a>
+                            <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate->id) }}">Modifica
+                                piatto</a>
 
                             <a class="btn btn-danger"href="#"
                                 data-bs-toggle="modal"data-bs-target="#modalId-{{ $plate->id }}">Elimina piatto</a>
@@ -50,7 +51,7 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 Annulla
                                             </button>
-                                            <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
+                                            <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger"
