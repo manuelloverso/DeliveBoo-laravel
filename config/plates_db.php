@@ -19,7 +19,7 @@ return [
         ],
         [
             'restaurant_id' => '1',
-            'name' => ' Spaghetti cacio e pepe',
+            'name' => 'Spaghetti cacio e pepe',
             'image' => 'https://www.casapappagallo.it/storage/17060/cacio-e-pepe.jpg',
             'description' => 'Ingredienti: spaghetti, parmiggiano, pepe.',
             'price' => '12.00',
@@ -128,56 +128,64 @@ return [
             'description' => 'Ingredienti: riso, tonno, alga nori.',
             'price' => '5.00',
             'is_visible' => '1',
-        ],[
+        ],
+        [
             'restaurant_id' => '3',
             'name' => 'Samosa',
             'image' => 'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/12/samosa-recipe.jpg',
             'description' => 'Ingredienti: farina, patate, anacardi, cipolle, peperoncini, curcuma, pisellini, zenzero, aglio, cumino.',
             'price' => '7.00',
             'is_visible' => '1',
-        ],[
+        ],
+        [
             'restaurant_id' => '3',
             'name' => 'Masala dosa',
             'image' => 'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/06/masala-dosa-recipe.jpg',
             'description' => 'Ingredienti: patate, semi di senape, lenticchie, zenzero, cipolla, coriandolo, peperoncino.',
             'price' => '10.00',
             'is_visible' => '1',
-        ],[
+        ],
+        [
             'restaurant_id' => '3',
             'name' => 'Pollo tandori',
             'image' => 'https://www.fattoincasadabenedetta.it/wp-content/uploads/2023/03/pollo-tandoori.jpg',
             'description' => 'Ingredienti: pollo, pasta tandori, curry, yogurt bianco, aglio, zenzero, limone.',
             'price' => '14.00',
             'is_visible' => '1',
-        ],[
+        ],
+        [
             'restaurant_id' => '3',
             'name' => 'Bhel puri',
             'image' => 'https://vegecravings.com/wp-content/uploads/2018/06/Bhel-Puri-Recipe-Step-By-Step-Instructions-1024x973.jpg.webp',
             'description' => 'Ingredienti: riso, arachidi, ceci, cetriolo, patate, cipolla, pomodoro, limone, curcuma.',
             'price' => '12.00',
             'is_visible' => '1',
-        ],[
+        ],
+        [
             'restaurant_id' => '3',
             'name' => 'Pollo tikka masala',
             'image' => 'https://www.giallozafferano.it/images/ricette/171/17176/foto_hd/hd650x433_wm.jpg',
             'description' => 'Ingredienti: pollo, yogurt greco, aglio, zenzero, paprika, cipolla, panna.',
             'price' => '14.00',
             'is_visible' => '1',
-        ],[
+        ],
+        [
             'restaurant_id' => '3',
             'name' => 'Meetha paan',
             'image' => 'https://img-global.cpcdn.com/recipes/9783949c6b4fa92d/680x482cq70/meetha-paan-and-date-mukhwaas-recipe-main-photo.jpg',
             'description' => 'Ingredienti: foglia di betel, noce di areca, varietà di spezie.',
             'price' => '12.00',
             'is_visible' => '1',
-        ],[
+        ],
+        [
             'restaurant_id' => '3',
             'name' => 'Naan',
             'image' => 'https://www.giallozafferano.it/images/200-20067/Naan_650x433_wm.jpg',
             'description' => 'Ingredienti: farina, yogurt bianco, lievito di birra.',
             'price' => '8.00',
             'is_visible' => '1',
-        ],[
+        ],
+        [
             'restaurant_id' => '3',
             'name' => "Biryani d'agnello",
             'image' => 'https://cdn.cook.stbm.it/thumbnails/ricette/5/5087/hd750x421.jpg',
