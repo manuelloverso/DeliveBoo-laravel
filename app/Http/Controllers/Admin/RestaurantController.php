@@ -8,7 +8,6 @@ use App\Http\Requests\UpdateRestaurantRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
-use App\Models\User;
 
 class RestaurantController extends Controller
 {
@@ -41,7 +40,7 @@ class RestaurantController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRestaurantRequest $request)
+    public function store($request)
     {
 
         $user = auth()->user();

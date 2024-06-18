@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Restaurant;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Type;
+use Illuminate\Support\Facades\Storage;
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +23,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $types = Type::all();
+        return view('auth.register', compact('types'));
     }
 
     /**
@@ -30,19 +34,61 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:50'],
+
+
+
+        $validated = $request->validate([
+            /* user */
+            'user_name' => ['required', 'string', 'max:50'],
             'lastname' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:100', 'unique:' . User::class],
+            'user_email' => ['required', 'string', 'lowercase', 'email', 'max:100', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            /* restaurant */
+            'address' => 'required|min:5|max:100',
+            'restaurant_email' => 'required|min:5|max:100|unique:restaurants,restaurant_email',
+            'phone_number' => 'required|min:5|max:15',
+            'p_iva' => 'required|min:10|max:20',
+            'restaurant_name' => 'required|min:3|max:50',
+            'image' => 'nullable|image|max:6000',
+            'types' => 'required|exists:types,id',
+            'user_id' => 'nullable|exists:user,id',
         ]);
 
+
+        /* Create the user */
         $user = User::create([
-            'name' => $request->name,
+            'user_name' => $request->user_name,
             'lastname' => $request->lastname,
-            'email' => $request->email,
+            'user_email' => $request->user_email,
             'password' => Hash::make($request->password),
         ]);
+
+        /* create the restaurant */
+        $validated['user_id'] = $user->id;
+
+        if ($request->has('image')) {
+            $img_path = Storage::put('uploads', $validated['image']);
+            $validated['image'] = $img_path;
+        } else {
+            $validated['image'] = '';
+        }
+
+        $restaurant = Restaurant::create([
+            'address' => $validated['address'],
+            'restaurant_email' => $validated['restaurant_email'],
+            'phone_number' => $validated['phone_number'],
+            'p_iva' => $validated['p_iva'],
+            'restaurant_name' => $validated['restaurant_name'],
+            'image' => $validated['image'],
+            'types' => $validated['types'],
+            'user_id' => $validated['user_id'],
+        ]);
+
+        if ($request->has('types')) {
+            $restaurant->types()->attach($validated['types']);
+        }
+
+
 
         event(new Registered($user));
 

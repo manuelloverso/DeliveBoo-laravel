@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('address', 100);
-            $table->string('mail', 100)->unique();
+            $table->string('restaurant_email', 100)->unique();
             $table->string('phone_number', 15)->nullable();
-            $table->string('vat', 20);
-            $table->string('name', 50);
+            $table->string('p_iva', 20);
+            $table->string('restaurant_name', 50);
             $table->string('image', 255)->nullable();
             $table->timestamps();
         });
