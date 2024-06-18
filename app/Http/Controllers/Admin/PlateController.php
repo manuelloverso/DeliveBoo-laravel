@@ -59,6 +59,8 @@ class PlateController extends Controller
             }
 
             $slug = Str::slug($request->name, '-');
+            $slugRestaurant = Str::slug($restaurant->name, '-');
+            $slug = $slug . '-' . $slugRestaurant;
             $val_data['slug'] = $slug;
 
             $plate = Plate::create($val_data);
@@ -80,12 +82,12 @@ class PlateController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        $plate = Plate::find($id);
+        //dd($plate);
         $user = auth()->user();
         $restaurant = $user->restaurant;
-        // dd($restaurant->plates);
+        //dd($restaurant->plates);
         if ($restaurant->plates->contains($plate)) {
             return view('admin.plates.edit', compact('plate'));
         } else {
@@ -98,30 +100,49 @@ class PlateController extends Controller
      */
     public function update(UpdatePlateRequest $request, Plate $plate)
     {
+        $user = auth()->user();
+        $restaurant = $user->restaurant;
+        $plates = $restaurant->plates;
+        $name_plates = [];
+
+        foreach ($plates as $plate) {
+            //dd($plate->name);
+            array_push($name_plates, $plate->name);
+        }
 
         $val_data = $request->validated();
         if (!$request->has('is_visible')) {
             $val_data['is_visible'] = 0;
         }
 
-        if ($request->has('image')) {
+        if (!in_array($request->name, $name_plates)) {
 
-            //check if the plate already had another image
-            if ($plate->image) {
-                //if so we delete it
-                Storage::delete($plate->image);
+
+            if ($request->has('image')) {
+
+                //check if the plate already had another image
+                if ($plate->image) {
+                    //if so we delete it
+                    Storage::delete($plate->image);
+                }
+
+                $img_path = Storage::put('uploads', $val_data['image']);
+                //dd($validated, $image_path);
+                $val_data['image'] = $img_path;
             }
 
-            $img_path = Storage::put('uploads', $val_data['image']);
-            //dd($validated, $image_path);
-            $val_data['image'] = $img_path;
+
+            $slug = Str::slug($request->name, '-');
+            $slugRestaurant = Str::slug($restaurant->name, '-');
+            $slug = $slug . '-' . $slugRestaurant;
+            $val_data['slug'] = $slug;
+
+
+            $plate->update($val_data);
+        } else {
+            return to_route('admin.plates.edit', compact('plate'))->with('message', "il nome del piatto già presente");
         }
 
-
-        $slug = Str::slug($request->name, '-');
-        $val_data['slug'] = $slug;
-
-        $plate->update($val_data);
         return to_route('admin.plates.index')->with('message', 'Piatto aggiornato correttamente.');
     }
 
