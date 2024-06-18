@@ -59,7 +59,7 @@ class PlateController extends Controller
             }
 
             $slug = Str::slug($request->name, '-');
-            $slugRestaurant = Str::slug($restaurant->name, '-');
+            $slugRestaurant = Str::slug($restaurant->restaurant_name, '-');
             $slug = $slug . '-' . $slugRestaurant;
             $val_data['slug'] = $slug;
 
@@ -133,7 +133,7 @@ class PlateController extends Controller
 
 
             $slug = Str::slug($request->name, '-');
-            $slugRestaurant = Str::slug($restaurant->name, '-');
+            $slugRestaurant = Str::slug($restaurant->restaurant_name, '-');
             $slug = $slug . '-' . $slugRestaurant;
             $val_data['slug'] = $slug;
 

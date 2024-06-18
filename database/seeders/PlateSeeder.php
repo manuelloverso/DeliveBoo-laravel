@@ -20,7 +20,7 @@ class PlateSeeder extends Seeder
         foreach ($plates as $plate) {
             $slug = Str::slug($plate['name'], '-');
             $restaurant = Restaurant::find($plate['restaurant_id']);
-            $slugRestaurant = Str::slug($restaurant->name, '-');
+            $slugRestaurant = Str::slug($restaurant->restaurant_name, '-');
 
             $newPlates = new Plate();
             $newPlates->restaurant_id = $plate['restaurant_id'];
@@ -31,9 +31,6 @@ class PlateSeeder extends Seeder
             $newPlates->price = $plate['price'];
             $newPlates->is_visible = $plate['is_visible'];
             $newPlates->save();
-
         }
-
-
     }
 }
