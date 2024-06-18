@@ -53,6 +53,57 @@ return [
             "user_id" => "5",
             "types" => [7]
         ],
+        [
+            "address" => "Via Elio Toaf 15",
+            "restaurant_email" => "lacarbonara@hotmail.it",
+            "phone_number" => "1234599886",
+            "p_iva" => "1255564868",
+            "restaurant_name" => "La Carbonara",
+            "image" => "https://wips.plug.it/cips/paginegialle.it/magazine/cms/2019/07/67818581_m-2.jpg?w=744&h=418&a=c",
+            "user_id" => "6",
+            "types" => [2]
+        ],
+        [
+            "address" => "Via Cavour 3",
+            "restaurant_email" => "nerone@gmail.com",
+            "phone_number" => "1234899886",
+            "p_iva" => "1255784868",
+            "restaurant_name" => "Nerone",
+            "image" => "https://i2.wp.com/www.kappuccio.com/wp-content/uploads/2019/09/C94151E0-E3C4-4832-B3E9-24A726B72A6E.jpeg?fit=900%2C593&ssl=1",
+            "user_id" => "7",
+            "types" => [9, 2]
+        ],
+        [
+            "address" => "Via Italia 23",
+            "restaurant_email" => "bigboy@gmail.com",
+            "phone_number" => "1234839886",
+            "p_iva" => "1255782868",
+            "restaurant_name" => "Big Boy",
+            "image" => "https://media-cdn.tripadvisor.com/media/photo-s/1b/9a/5d/fc/burger-colorati-e-gustosi.jpg",
+            "user_id" => "8",
+            "types" => [7]
+        ],
+        [
+            "address" => "Via del Colosseo 4",
+            "restaurant_email" => "hostariadelgladiatore@gmail.com",
+            "phone_number" => "1235699886",
+            "p_iva" => "1665782868",
+            "restaurant_name" => "Hostaria del Gladiatore",
+            "image" => "https://www.puntarellarossa.it/wp/wp-content/uploads/2023/10/ristoranti-colosseo.jpg",
+            "user_id" => "9",
+            "types" => [1]
+        ],
+        [
+            "address" => "Via Ostilia 10",
+            "restaurant_email" => "uramakeria@gmail.com",
+            "phone_number" => "1275699886",
+            "p_iva" => "1667782868",
+            "restaurant_name" => "uramakeria",
+            "image" => "https://www.corriere.it/methode_image/2021/06/17/Cucina/Foto%20Cucina%20-%20Trattate/00a674e0-9100-11e9-800d-4c08a8e6b4ca-kNgC-U32708267439210yG-593x443@Corriere-Web-Sezioni.jpg",
+            "user_id" => "10",
+            "types" => [4]
+        ]
+
 
     ],
 ];
