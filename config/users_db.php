@@ -3,40 +3,34 @@
 return [
     "users" => [
         [
-            "name" => "Matteo",
+            "user_name" => "Matteo",
             "lastname" => "Mutti",
-            "email" => "matteo@gmail.com",
+            "user_email" => "matteo@gmail.com",
             "password" => "password",
         ],
         [
-            "name" => "Simone",
+            "user_name" => "Simone",
             "lastname" => "Vacca",
-            "email" => "simone@gmail.com",
+            "user_email" => "simone@gmail.com",
             "password" => "password",
         ],
         [
-            "name" => "Manuel",
+            "user_name" => "Manuel",
             "lastname" => "Loverso",
-            "email" => "manuel@gmail.com",
+            "user_email" => "manuel@gmail.com",
             "password" => "password",
         ],
         [
-            "name" => "Giorgia",
+            "user_name" => "Giorgia",
             "lastname" => "Mancini",
-            "email" => "giorgia@gmail.com",
+            "user_email" => "giorgia@gmail.com",
             "password" => "password",
         ],
         [
-            "name" => "Fabio",
+            "user_name" => "Fabio",
             "lastname" => "Pacific",
-            "email" => "fabio@gmail.com",
+            "user_email" => "fabio@gmail.com",
             "password" => "password",
         ],
-        [
-            "name" => "Adriano",
-            "lastname" => "Grimaldi",
-            "email" => "adriano@gmail.com",
-            "password" => "password",
-        ]
     ]
 ];
