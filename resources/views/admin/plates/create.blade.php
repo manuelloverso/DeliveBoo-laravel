@@ -74,7 +74,7 @@
             {{-- price input --}}
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input required type="text" name="price" id="price"
+                <input required type="number" min="1" max="100" step="0.10" name="price" id="price"
                     class="form-control @error('price') is-invalid @enderror" placeholder="00.00"
                     value="{{ old('price') }}" />
                 @error('price')
@@ -82,7 +82,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary" onclick="form.submit(); disabled=true;">
+            <button type="submit" class="btn btn-primary">
                 Aggiungi
             </button>
 
