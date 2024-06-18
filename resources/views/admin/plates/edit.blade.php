@@ -95,7 +95,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary" onclick="form.submit(); disabled=true;">
+            <button type="submit" class="btn btn-primary">
                 Modifica
             </button>
             {{-- <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">Back</a> --}}

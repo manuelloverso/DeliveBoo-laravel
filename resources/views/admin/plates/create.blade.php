@@ -82,7 +82,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary" onclick="form.submit(); disabled=true;">
+            <button type="submit" class="btn btn-primary">
                 Aggiungi
             </button>
 
