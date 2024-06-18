@@ -150,8 +150,7 @@
                                 <label for="phone_number" class="col-md-4 col-form-label text-md-right">Numero di
                                     telefono</label>
                                 <div class="col-md-6">
-                                    <input type="tel" required
-                                        class="form-control @error('phone_number') is-invalid @enderror"
+                                    <input type="tel" class="form-control @error('phone_number') is-invalid @enderror"
                                         name="phone_number" id="phone_number" aria-describedby="helpId" placeholder=""
                                         value="{{ old('phone_number') }}" />
                                     @error('phone_number')
