@@ -168,10 +168,10 @@
                                         class="form-control @error('p_iva') is-invalid @enderror" name="p_iva"
                                         id="p_iva" aria-describedby="helpId" placeholder=""
                                         value="{{ old('p_iva') }}" />
+                                    @error('p_iva')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
-                                @error('p_iva')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
                             </div>
 
 
