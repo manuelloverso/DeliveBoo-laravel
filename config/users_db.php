@@ -27,9 +27,44 @@ return [
             "password" => "password",
         ],
         [
-            "user_name" => "Fabio",
+            "user_name" => "Adriano",
             "lastname" => "Pacific",
             "user_email" => "fabio@gmail.com",
+            "password" => "password",
+        ],
+
+        [
+            "user_name" => "Giuliano",
+            "lastname" => "Pacific",
+            "user_email" => "giuliano@gmail.com",
+            "password" => "password",
+        ],
+
+        [
+            "user_name" => "Artur",
+            "lastname" => "Pacific",
+            "user_email" => "artur@gmail.com",
+            "password" => "password",
+        ],
+
+        [
+            "user_name" => "Loris",
+            "lastname" => "Pacific",
+            "user_email" => "loris@gmail.com",
+            "password" => "password",
+        ],
+
+        [
+            "user_name" => "Pippo",
+            "lastname" => "Pacific",
+            "user_email" => "pippo@gmail.com",
+            "password" => "password",
+        ],
+
+        [
+            "user_name" => "Pluto",
+            "lastname" => "Pacific",
+            "user_email" => "pluto@gmail.com",
             "password" => "password",
         ],
     ]
