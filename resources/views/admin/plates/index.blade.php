@@ -25,7 +25,7 @@
                         @endif
                         <div><strong>Prezzo: </strong>{{ $plate->price }}€</div>
                         <div class="d-flex justify-content-around">
-                            <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate->id) }}">Modifica
+                            <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate) }}">Modifica
                                 piatto</a>
 
                             <a class="btn btn-danger"href="#"

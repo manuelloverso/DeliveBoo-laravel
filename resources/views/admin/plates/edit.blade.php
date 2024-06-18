@@ -11,6 +11,7 @@
             <h1 class="">Modifica: {{ $plate->name }}</h1>
         </div>
         @include('partials.validation-errors')
+        @include('partials.message-error')
         <form action="{{ route('admin.plates.update', $plate) }}" method="post" enctype="multipart/form-data">
             @method('PUT')
             @csrf {{-- this is a laravel directive to protect your application from cross-site request forgery --}}
