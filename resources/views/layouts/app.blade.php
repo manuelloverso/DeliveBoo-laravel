@@ -33,7 +33,7 @@
 
         <nav class="navbar navbar-expand-sm navbar-light bg_orange ">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
+                <a class="navbar-brand" href="http://localhost:5173/">
                     <img class="nav-logo" src="{{ Vite::asset('resources/img/DeliveRome-logo-nocolor.svg') }}"
                         alt="">
 
