@@ -10,7 +10,6 @@
             <div class="px-2"></div>
             <h1 class="">Modifica: {{ $plate->name }}</h1>
         </div>
-        @include('partials.validation-errors')
         @include('partials.message-error')
         <form action="{{ route('admin.plates.update', $plate) }}" method="post" enctype="multipart/form-data">
             @method('PUT')
@@ -18,7 +17,7 @@
 
             {{-- name input --}}
             <div class="mb-3">
-                <label for="name" class="form-label">Nome del piatto</label>
+                <label for="name" class="form-label">Nome del piatto <span class="text-danger">*</span></label>
                 <input required type="text" name="name" id="name"
                     class="form-control @error('name') is-invalid @enderror" placeholder="aggiungi il nome del piatto"
                     value="{{ old('name', $plate->name) }}" />
@@ -86,7 +85,7 @@
 
             {{-- price input --}}
             <div class="mb-3">
-                <label for="price" class="form-label">Prezzo</label>
+                <label for="price" class="form-label">Prezzo <span class="text-danger">*</span></label>
                 <input required type="number" min="1" max="100" step="0.10" name="price" id="price"
                     class="form-control @error('price') is-invalid @enderror" placeholder="00.00"
                     value="{{ old('price', $plate->price) }}" />
@@ -94,7 +93,9 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-
+            <div class="py-3">
+                I campi contrassegnati con <span class="text-danger">*</span> sono obbligatori
+            </div>
             <button type="submit" class="btn btn-primary">
                 Modifica
             </button>

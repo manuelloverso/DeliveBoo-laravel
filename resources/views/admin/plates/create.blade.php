@@ -10,15 +10,13 @@
             <div class="px-2"></div>
             <h1 class="">Aggiungi un nuovo piatto</h1>
         </div>
-        @include('partials.validation-errors')
         @include('partials.message-error')
-
         <form action="{{ route('admin.plates.store') }}" method="post" enctype="multipart/form-data">
             @csrf {{-- this is a laravel directive to protect your application from cross-site request forgery --}}
 
             {{-- name input --}}
             <div class="mb-3">
-                <label for="name" class="form-label">Nome</label>
+                <label for="name" class="form-label">Nome <span class="text-danger">*</span></label>
                 <input type="text" required name="name" id="name"
                     class="form-control @error('name') is-invalid @enderror" placeholder="aggiungi il nome del piatto"
                     value="{{ old('name') }}" />
@@ -73,13 +71,16 @@
 
             {{-- price input --}}
             <div class="mb-3">
-                <label for="price" class="form-label">Prezzo</label>
+                <label for="price" class="form-label">Prezzo <span class="text-danger">*</span></label>
                 <input required type="number" min="1" max="100" step="0.10" name="price" id="price"
                     class="form-control @error('price') is-invalid @enderror" placeholder="00.00"
                     value="{{ old('price') }}" />
                 @error('price')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
+            </div>
+            <div class="py-3">
+                I campi contrassegnati con <span class="text-danger">*</span> sono obbligatori
             </div>
 
             <button type="submit" class="btn btn-primary">
