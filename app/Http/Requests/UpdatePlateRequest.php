@@ -25,7 +25,7 @@ class UpdatePlateRequest extends FormRequest
             'name' => 'required|max:50',
             'image' => 'nullable|image|max:5000',
             'description' => 'nullable|max:600',
-            'price' => 'required|numeric|max:1000|decimal:2',
+            'price' => 'required|numeric|min:0|max:1000|decimal:2',
             'is_visible' => 'nullable|boolean',
         ];
     }

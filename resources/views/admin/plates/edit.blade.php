@@ -86,7 +86,7 @@
             {{-- price input --}}
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo <span class="text-danger">*</span></label>
-                <input required type="number" min="1" max="100" step="0.10" name="price" id="price"
+                <input required type="number" min="0" max="100" step="0.10" name="price" id="price"
                     class="form-control @error('price') is-invalid @enderror" placeholder="00.00"
                     value="{{ old('price', $plate->price) }}" />
                 @error('price')
