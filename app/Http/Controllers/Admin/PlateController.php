@@ -90,6 +90,7 @@ class PlateController extends Controller
             return view('admin.plates.edit', compact('plate'));
         } else {
             abort(404);
+            //return view('errors.404');
         }
     }
 
