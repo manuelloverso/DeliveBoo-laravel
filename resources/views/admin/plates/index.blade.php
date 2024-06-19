@@ -47,6 +47,9 @@
                                 <td>
                                     @if (Str::startsWith($plate->image, 'https://'))
                                         <img loading="lazy" class="plate-img" src="{{ $plate->image }}" alt="">
+                                    @elseif ($plate->image == null)
+                                        <img class="plate-img" src="{{ Vite::asset('resources/img/plate-default.jpg') }}"
+                                            alt="">
                                     @else
                                         <img loading="lazy" class=" plate-img" src="{{ asset('storage/' . $plate->image) }}"
                                             alt="">
