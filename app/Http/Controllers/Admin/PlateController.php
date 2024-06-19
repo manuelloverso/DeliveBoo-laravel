@@ -42,6 +42,8 @@ class PlateController extends Controller
         $plates = $restaurant->plates;
         $name_plates = [];
 
+
+
         foreach ($plates as $plate) {
             //dd($plate->name);
             array_push($name_plates, $plate->name);
@@ -59,6 +61,9 @@ class PlateController extends Controller
             }
 
             $slug = Str::slug($request->name, '-');
+            $slugRestaurant = Str::slug($restaurant->name, '-');
+            $slugRestaurant = Str::slug($restaurant->restaurant_name, '-');
+            $slug = $slug . '-' . $slugRestaurant;
             $val_data['slug'] = $slug;
 
             $plate = Plate::create($val_data);
@@ -80,9 +85,8 @@ class PlateController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        $plate = Plate::find($id);
         $user = auth()->user();
         $restaurant = $user->restaurant;
         // dd($restaurant->plates);
@@ -98,6 +102,8 @@ class PlateController extends Controller
      */
     public function update(UpdatePlateRequest $request, Plate $plate)
     {
+        $user = auth()->user();
+        $restaurant = $user->restaurant;
 
         $val_data = $request->validated();
         if (!$request->has('is_visible')) {
@@ -117,9 +123,13 @@ class PlateController extends Controller
             $val_data['image'] = $img_path;
         }
 
-
         $slug = Str::slug($request->name, '-');
+        $slugRestaurant = Str::slug($restaurant->name, '-');
+        $slugRestaurant = Str::slug($restaurant->restaurant_name, '-');
+        $slug = $slug . '-' . $slugRestaurant;
         $val_data['slug'] = $slug;
+
+
 
         $plate->update($val_data);
         return to_route('admin.plates.index')->with('message', 'Piatto aggiornato correttamente.');

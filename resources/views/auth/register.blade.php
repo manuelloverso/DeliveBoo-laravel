@@ -209,8 +209,9 @@
                                     @enderror
                                 </div>
                             </div>
-
-
+                            <div class="py-3">
+                                I campi contrassegnati con <span class="text-danger">*</span> sono obbligatori
+                            </div>
                             <div class="mb-4 pt-4 row">
                                 <div class="col-md-6 offset-md-4 ">
                                     <button type="submit" class="btn btn-primary">
