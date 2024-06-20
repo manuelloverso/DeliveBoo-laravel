@@ -15,6 +15,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class RegisteredUserController extends Controller
 {
@@ -66,27 +67,23 @@ class RegisteredUserController extends Controller
         /* create the restaurant */
         $validated['user_id'] = $user->id;
 
-        if ($request->has('image')) {
-            $img_path = Storage::put('uploads', $validated['image']);
-            $validated['image'] = $img_path;
-        } else {
-            $validated['image'] = '';
-        }
+        $img_path = Storage::put('uploads', $validated['image']);
+        $validated['image'] = $img_path;
+
 
         $restaurant = Restaurant::create([
+            'restaurant_name' => $validated['restaurant_name'],
+            'restaurant_slug' => Str::slug($validated['restaurant_name'], '-'),
             'address' => $validated['address'],
             'restaurant_email' => $validated['restaurant_email'],
             'phone_number' => $validated['phone_number'],
             'p_iva' => $validated['p_iva'],
-            'restaurant_name' => $validated['restaurant_name'],
             'image' => $validated['image'],
             'types' => $validated['types'],
             'user_id' => $validated['user_id'],
         ]);
 
-        if ($request->has('types')) {
-            $restaurant->types()->attach($validated['types']);
-        }
+        $restaurant->types()->attach($validated['types']);
 
 
 
