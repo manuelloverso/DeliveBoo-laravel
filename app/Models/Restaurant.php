@@ -14,7 +14,7 @@ class Restaurant extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['restaurant_name', 'address', 'phone_number', 'p_iva', 'image', 'restaurant_email', 'user_id'];
+    protected $fillable = ['restaurant_name', 'restaurant_slug', 'address', 'phone_number', 'p_iva', 'image', 'restaurant_email', 'user_id'];
 
     /**
      * Get the user that owns the Restaurant
