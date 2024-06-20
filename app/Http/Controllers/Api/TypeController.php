@@ -21,6 +21,7 @@ class TypeController extends Controller
 
     public function filter($type_ids)
     {
+
         /* get an array of types based on the array received by the api call */
         $remove_first = str_replace('[', '', $type_ids);
         $remove_second = str_replace(']', '', $remove_first);
@@ -28,32 +29,20 @@ class TypeController extends Controller
         $types = [];
         foreach ($final_array as $type_id) {
             $type = Type::find($type_id);
-            array_push($types, $type);
+            array_push($types, $type->name);
         }
 
-        /* function checker($restaurantTypes, $types)
-        {
-            dd($types);
-            foreach ($types as $type) {
-                if (in_array($type, $restaurantTypes)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        }; */
 
         /* get the right restaurants */
         $restaurants = Restaurant::with('types')->get();
         $filteredRestaurants = [];
         foreach ($restaurants as $restaurant) {
-
-            $restTypes = [];
-            dd($types, $restaurant->types);
-            foreach ($types as $type) {
-                if ($restaurant->types->contains($type) && count(array_intersect($types, $restaurant->types->toArray())) == count($types)) {
-                    array_push($filteredRestaurants, $restaurant);
-                }
+            $rest_types = [];
+            foreach ($restaurant->types as $rest_type) {
+                array_push($rest_types, $rest_type->name);
+            }
+            if (count(array_intersect($rest_types, $types)) == count($types)) {
+                array_push($filteredRestaurants, $restaurant);
             }
         }
 
