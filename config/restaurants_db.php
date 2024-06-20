@@ -98,10 +98,20 @@ return [
             "restaurant_email" => "uramakeria@gmail.com",
             "phone_number" => "1275699886",
             "p_iva" => "1667782868",
-            "restaurant_name" => "uramakeria",
+            "restaurant_name" => "Uramakeria",
             "image" => "https://www.corriere.it/methode_image/2021/06/17/Cucina/Foto%20Cucina%20-%20Trattate/00a674e0-9100-11e9-800d-4c08a8e6b4ca-kNgC-U32708267439210yG-593x443@Corriere-Web-Sezioni.jpg",
             "user_id" => "10",
             "types" => [4]
+        ],
+        [
+            "address" => "Via Renzo Rossi 9",
+            "restaurant_email" => "mexicalli@gmail.com",
+            "phone_number" => "1275619886",
+            "p_iva" => "1667712868",
+            "restaurant_name" => "Mexicalli",
+            "image" => "https://www.coolinmilan.it/cool24/wp-content/uploads/2022/09/ristorante-messicano-milano.jpg",
+            "user_id" => "11",
+            "types" => [6]
         ]
 
 
