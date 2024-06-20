@@ -67,5 +67,11 @@ return [
             "user_email" => "pluto@gmail.com",
             "password" => "password",
         ],
+        [
+            "user_name" => "Silvio",
+            "lastname" => "Rossi",
+            "user_email" => "silvio@gmail.com",
+            "password" => "password",
+        ],
     ]
 ];
