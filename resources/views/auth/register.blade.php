@@ -251,10 +251,11 @@
 
                                 {{-- Image input --}}
                                 <div class="mb-4 row">
-                                    <label for="image" class="col-md-4 col-form-label text-md-right">Immagine</label>
+                                    <label for="image" class="col-md-4 col-form-label text-md-right">Immagine <span
+                                            class="text-danger">*</span></label>
                                     <div class="col-md-6">
 
-                                        <input type="file" name="image" id="image"
+                                        <input type="file" name="image" id="image" required
                                             class="form-control  @error('image') is-invalid @enderror"
                                             placeholder="add an image" />
                                         @error('image')

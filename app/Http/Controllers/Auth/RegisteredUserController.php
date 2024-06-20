@@ -49,7 +49,7 @@ class RegisteredUserController extends Controller
             'phone_number' => 'nullable|numeric|min_digits:5|max_digits:15',
             'p_iva' => 'required|numeric|min_digits:11|max_digits:11',
             'restaurant_name' => 'required|min:3|max:50',
-            'image' => 'nullable|image|max:6000',
+            'image' => 'required|image|max:6000',
             'types' => 'required|exists:types,id',
             'user_id' => 'nullable|exists:user,id',
         ]);
