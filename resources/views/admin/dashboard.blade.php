@@ -28,13 +28,13 @@
                                 <i class="fa-solid fa-location-dot"></i> {{ $user->restaurant->address }}
                             </div>
                             <div class="py-2">
-                                <i class="fa-solid fa-at"></i> {{ $user->restaurant->mail }}
+                                <i class="fa-solid fa-at"></i> {{ $user->restaurant->restaurant_email }}
                             </div>
                             <div class="py-2">
                                 <i class="fa-solid fa-phone"></i> {{ $user->restaurant->phone_number }}
                             </div>
                             <div class="py-2">
-                                <strong>PI:</strong> {{ $user->restaurant->vat }}
+                                <strong>PI:</strong> {{ $user->restaurant->p_iva }}
                             </div>
                         </div>
 
