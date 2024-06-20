@@ -656,6 +656,63 @@ return [
             'description' => 'Ingredienti:',
             'price' => '30.00',
             'is_visible' => '1',
+        ],
+        [
+            'restaurant_id' => '11',
+            'name' => 'Pollo tacos',
+            'image' => 'https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2023/02/Tacos-di-pollo-foto-finale-1-1200x675.jpg',
+            'description' => 'Ingredienti:tacos di mais, pollo, verdure grigliate, maionese, fagioli',
+            'price' => '09.00',
+            'is_visible' => '1',
+        ],
+        [
+            'restaurant_id' => '11',
+            'name' => 'Grill tacos',
+            'image' => 'https://winedharma.com/wine-dharma/uploads/2020/10/1490-tacos-di-pollo-ricetta-messicana-cucina-messicana-tacos-con-carne-e-verdure-ricetta-originale-messic.jpg',
+            'description' => 'Ingredienti: tacos di mais, manzo alla griglia, verdie grigliate, cipolle, salsa BBQ',
+            'price' => '09.00',
+            'is_visible' => '1',
+        ],
+        [
+            'restaurant_id' => '11',
+            'name' => 'Fajitas',
+            'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_x4ZQ1Y8m_0ZXGK1ySQun1nVkLJzlHu4w4w&s',
+            'description' => 'Ingredienti: tortillas di grano, fagioli tex mex, peperoni, cipolla, salsa spicy',
+            'price' => '09.00',
+            'is_visible' => '1',
+        ],
+        [
+            'restaurant_id' => '11',
+            'name' => 'Pozole',
+            'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxF9yRTixP_aV-2sSno9oY8IStFAK9c8D3OA&s',
+            'description' => 'Ingredienti: maiale, mais, peperoncino, cipolla, lattuga,ravanelli ',
+            'price' => '10.00',
+            'is_visible' => '1',
+        ],
+        [
+            'restaurant_id' => '11',
+            'name' => 'Ceasar salad',
+            'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIAxieNe8cdfXwKfyZinIBviIZGUC8z37ZfA&s',
+            'description' => 'Ingredienti: lattuga, pollo alla griglia, pomodori, avocado, salsa ceasar ',
+            'price' => '08.00',
+            'is_visible' => '1',
+        ],
+        [
+            'restaurant_id' => '11',
+            'name' => 'Chilli',
+            'image' => 'https://www.viaggi-usa.it/wp-content/uploads/2020/06/chili-con-carne-ricetta-originale-americana.jpg',
+            'description' => 'Ingredienti: fagioli, peperoni, peperoncino',
+            'price' => '11.00',
+            'is_visible' => '1',
+        ],
+        [
+            'restaurant_id' => '11',
+            'name' => 'Nachos',
+            'image' => 'https://www.develey.it/wp-content/uploads/2018/11/nachos-con-salsa-al-formaggio.jpg',
+            'description' => 'Ingredienti: nachos di mais, cheddar, formaggio fuso, fagioli, avocado, pomodoro, jalapeno, cipolla',
+            'price' => '08.00',
+            'is_visible' => '1',
         ]
+
     ]
 ];
