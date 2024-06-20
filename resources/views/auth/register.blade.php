@@ -58,8 +58,7 @@
                                     <div class="col-md-6">
                                         <input id="user_name" type="text"
                                             class="form-control @error('user_name') is-invalid @enderror" name="user_name"
-                                            value="{{ old('user_name', 'Matteo') }}" required autocomplete="user_name"
-                                            autofocus>
+                                            value="{{ old('user_name') }}" required autocomplete="user_name" autofocus>
                                         @error('user_name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -75,8 +74,7 @@
                                     <div class="col-md-6">
                                         <input id="lastname" type="text"
                                             class="form-control @error('lastname') is-invalid @enderror" name="lastname"
-                                            value="{{ old('lastname', 'mariachi') }}" required autocomplete="lastname"
-                                            autofocus>
+                                            value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
 
                                         @error('lastname')
                                             <span class="invalid-feedback" role="alert">
@@ -94,8 +92,7 @@
                                     <div class="col-md-6">
                                         <input id="user_email" type="email"
                                             class="form-control @error('user_email') is-invalid @enderror" name="user_email"
-                                            value="{{ old('user_email', 'poseidono@gmail.com') }}" required
-                                            autocomplete="user_email">
+                                            value="{{ old('user_email') }}" required autocomplete="user_email">
 
                                         @error('user_email')
                                             <span class="invalid-feedback" role="alert">
@@ -113,7 +110,7 @@
                                     <div class="col-md-6">
                                         <input id="password" type="password"
                                             class="form-control @error('password') is-invalid @enderror" name="password"
-                                            required autocomplete="new-password" value="password">
+                                            required autocomplete="new-password">
 
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -130,8 +127,7 @@
 
                                     <div class="col-md-6">
                                         <input id="password-confirm" type="password" class="form-control"
-                                            name="password_confirmation" required autocomplete="new-password"
-                                            value="password">
+                                            name="password_confirmation" required autocomplete="new-password">
                                         <div style="visibility:hidden; color:red; " id="chk_option_error_passw">
                                             La password non corrisponde
                                         </div>
@@ -152,7 +148,7 @@
                                         <input type="text" required
                                             class="form-control @error('restaurant_name') is-invalid @enderror"
                                             name="restaurant_name" id="restaurant_name" aria-describedby="helpId"
-                                            placeholder="" value="{{ old('restaurant_name', 'Poseidon rest') }}" />
+                                            placeholder="" value="{{ old('restaurant_name') }}" />
                                         @error('restaurant_name')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -167,7 +163,7 @@
                                         <input type="text" required
                                             class="form-control @error('address') is-invalid @enderror" name="address"
                                             id="address" aria-describedby="helpId" placeholder=""
-                                            value="{{ old('address', 'via le donzelle') }}" />
+                                            value="{{ old('address') }}" />
                                         @error('address')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -181,11 +177,10 @@
                                         Ristorante
                                         <span class="text-danger">*</span></label>
                                     <div class="col-md-6">
-                                        <input type="email"
+                                        <input type="email" required
                                             class="form-control @error('restaurant_email') is-invalid @enderror"
                                             name="restaurant_email" id="restaurant_email" aria-describedby="helpId"
-                                            placeholder=""
-                                            value="{{ old('restaurant_email', 'poseidono@gmail.com') }}" />
+                                            placeholder="" value="{{ old('restaurant_email') }}" />
                                         @error('restaurant_email')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -200,7 +195,7 @@
                                         <input type="tel"
                                             class="form-control @error('phone_number') is-invalid @enderror"
                                             name="phone_number" id="phone_number" aria-describedby="helpId"
-                                            placeholder="" value="{{ old('phone_number', '3358585858') }}" />
+                                            placeholder="" value="{{ old('phone_number') }}" />
                                         @error('phone_number')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -215,7 +210,7 @@
                                         <input required type="text"
                                             class="form-control @error('p_iva') is-invalid @enderror" name="p_iva"
                                             id="p_iva" aria-describedby="helpId" placeholder=""
-                                            value="{{ old('p_iva', '00251415236') }}" />
+                                            value="{{ old('p_iva') }}" />
                                         @error('p_iva')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
