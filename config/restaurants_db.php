@@ -112,7 +112,57 @@ return [
             "image" => "https://www.coolinmilan.it/cool24/wp-content/uploads/2022/09/ristorante-messicano-milano.jpg",
             "user_id" => "11",
             "types" => [6]
-        ]
+        ],
+        [
+            "address" => "Via appia 698",
+            "restaurant_email" => "fontanile@gmail.com",
+            "phone_number" => "1275619886",
+            "p_iva" => "1667712868",
+            "restaurant_name" => "Il fontanile",
+            "image" => "https://media-cdn.tripadvisor.com/media/photo-s/2a/90/de/18/le-sale-del-ristorante.jpg",
+            "user_id" => "12",
+            "types" => [8, 2, 9, 10]
+        ],
+        [
+            "address" => "Via portuense 328",
+            "restaurant_email" => "cucaracha@gmail.com",
+            "phone_number" => "1275619886",
+            "p_iva" => "1667712868",
+            "restaurant_name" => "La cucaracha",
+            "image" => "https://www.compton-tattoo.it/wp-content/uploads/2017/12/ae445c8d7f73702bdefada49968d257f-cross-tattoos-new-tattoos.jpg",
+            "user_id" => "13",
+            "types" => [6]
+        ],
+        [
+            "address" => "Viale cortina d'ampezzo 79",
+            "restaurant_email" => "tajmahal@gmail.com",
+            "phone_number" => "1275619886",
+            "p_iva" => "1667712868",
+            "restaurant_name" => "Taj Mahal",
+            "image" => "https://assets.eatintime.it/eatintime/img/media/5614-tandoori-bites-ristorante-indiano-milano-md.jpg",
+            "user_id" => "14",
+            "types" => [5]
+        ],
+        [
+            "address" => "Via baveno 2",
+            "restaurant_email" => "superpizza@gmail.com",
+            "phone_number" => "1275619886",
+            "p_iva" => "1667712868",
+            "restaurant_name" => "Super Pizza",
+            "image" => "https://media-cdn.tripadvisor.com/media/photo-s/22/be/0f/b7/pizzeria-naturale.jpg",
+            "user_id" => "15",
+            "types" => [8]
+        ],
+        [
+            "address" => "Via cristoforo colombo 155",
+            "restaurant_email" => "ishin@gmail.com",
+            "phone_number" => "1275619886",
+            "p_iva" => "1667712868",
+            "restaurant_name" => "Ishin",
+            "image" => "https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2020/11/tipi-di-sushi-1-1200x675.jpg",
+            "user_id" => "16",
+            "types" => [3, 4]
+        ],
 
 
     ],

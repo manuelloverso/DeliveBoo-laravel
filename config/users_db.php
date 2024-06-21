@@ -73,5 +73,35 @@ return [
             "user_email" => "silvio@gmail.com",
             "password" => "password",
         ],
+        [
+            "user_name" => "Giuseppe",
+            "lastname" => "Garibaldi",
+            "user_email" => "giuseppe@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Franco",
+            "lastname" => "Pirelli",
+            "user_email" => "franco@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Ferruccio",
+            "lastname" => "Lamborgini",
+            "user_email" => "ferruccio@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Enzo",
+            "lastname" => "Ferrari",
+            "user_email" => "enzo@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Bob",
+            "lastname" => "Dylan",
+            "user_email" => "bob@gmail.com",
+            "password" => "password",
+        ],
     ]
 ];
