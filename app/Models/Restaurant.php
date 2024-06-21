@@ -45,4 +45,14 @@ class Restaurant extends Model
     {
         return $this->belongsToMany(Type::class);
     }
+
+    /**
+     * Get all of the orders for the Restaurant
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
 }
