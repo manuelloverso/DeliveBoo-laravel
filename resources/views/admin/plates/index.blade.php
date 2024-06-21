@@ -34,8 +34,8 @@
                             <th scope="col">Immagine</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Prezzo</th>
-                            <th scope="col">Azioni</th>
-
+                            <th class="text-center" scope="col">Azioni</th>
+                            <th class="text-center" scope="col">Disponibile</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,12 +60,20 @@
 
                                 <td><strong>{{ $plate->price }}€</strong></td>
 
-                                <td>
+                                <td class="text-center">
                                     <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate) }}"><i
                                             class="fa-solid fa-pen"></i> Modifica</a>
                                     <a class="btn btn-danger"href="#"
                                         data-bs-toggle="modal"data-bs-target="#modalId-{{ $plate->id }}"><i
                                             class="fa-solid fa-trash-can"></i> Elimina</a>
+                                </td>
+
+                                <td class="text-center">
+                                    @if($plate->is_visible)
+                                    <i class="fa-solid fa-circle-check text-success fs-4"></i>
+                                    @else
+                                    <i class="fa-solid fa-circle-xmark text-danger fs-4"></i>
+                                    @endif
                                 </td>
 
                             </tr>
