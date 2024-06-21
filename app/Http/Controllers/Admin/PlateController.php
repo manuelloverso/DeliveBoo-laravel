@@ -141,6 +141,7 @@ class PlateController extends Controller
      */
     public function destroy($id)
     {
+        //dd($id);
         $plate = Plate::find($id);
         if ($plate->image) {
             Storage::delete($plate->image);

@@ -5,26 +5,19 @@
         @include('partials.message-action')
 
 
-
-
         @if ($plates->isEmpty())
             <div class="d-flex justify-content-center pt-4 gap-2">
                 <h3>Inizia la tua avventura con noi e</h3>
                 <div class="d-flex mb-4 gap-2">
-
                     <a class="btn btn-success" href="{{ route('admin.plates.create') }}">Aggiungi il tuo primo piatto</a>
-
                 </div>
-
             </div>
         @else
             <div class="d-flex mb-4 gap-2">
                 <a class="btn btn-secondary" href="{{ route('admin.dashboard') }}"><i class="fa fa-arrow-circle-left"
                         aria-hidden="true"></i></a>
                 <a class="btn btn-success" href="{{ route('admin.plates.create') }}">Aggiungi un piatto</a>
-
             </div>
-
 
             <div class="table-responsive">
                 <table class="table table-dark">
@@ -61,21 +54,20 @@
                                 <td><strong>{{ $plate->price }}€</strong></td>
 
                                 <td class="text-center">
+                                    @if ($plate->is_visible)
+                                        <i class="fa-solid fa-circle-check text-success fs-4"></i>
+                                    @else
+                                        <i class="fa-solid fa-circle-xmark text-danger fs-4"></i>
+                                    @endif
+                                </td>
+
+                                <td class="text-center">
                                     <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate) }}"><i
                                             class="fa-solid fa-pen"></i> Modifica</a>
                                     <a class="btn btn-danger"href="#"
                                         data-bs-toggle="modal"data-bs-target="#modalId-{{ $plate->id }}"><i
                                             class="fa-solid fa-trash-can"></i> Elimina</a>
                                 </td>
-
-                                <td class="text-center">
-                                    @if($plate->is_visible)
-                                    <i class="fa-solid fa-circle-check text-success fs-4"></i>
-                                    @else
-                                    <i class="fa-solid fa-circle-xmark text-danger fs-4"></i>
-                                    @endif
-                                </td>
-
                             </tr>
 
                             <!-- Modal Body -->
@@ -99,9 +91,9 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 Annulla
                                             </button>
-                                            <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
+                                            <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="post">
                                                 @csrf
-                                                @method('DELETE')
+                                                @method('delete')
                                                 <button type="submit" class="btn btn-danger"
                                                     onclick="form.submit(); disabled=true;">Elimina</button>
                                             </form>
@@ -112,12 +104,7 @@
                         @endforeach
                     </tbody>
                 </table>
-
-
-
-
             </div>
         @endif
-
     </div>
 @endsection
