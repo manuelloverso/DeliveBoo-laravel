@@ -30,7 +30,7 @@
                 <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
+                            <th class="text-center" scope="col">Id</th>
                             <th scope="col">Immagine</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Prezzo</th>
@@ -39,10 +39,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($plates as $plate)
+                        @foreach ($plates as $index => $plate)
                             <tr class="align-middle">
 
-                                <td scope="row">{{ $plate->id }}</td>
+                                <td class="text-center" scope="row">{{ $index + 1 }}</td>
 
                                 <td>
                                     @if (Str::startsWith($plate->image, 'https://'))
