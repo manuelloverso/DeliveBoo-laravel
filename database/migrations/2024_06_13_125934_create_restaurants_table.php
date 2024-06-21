@@ -5,8 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -17,7 +16,6 @@ return new class extends Migration
             $table->string('restaurant_name', 50);
             $table->string('restaurant_slug', 50);
             $table->string('address', 100);
-            $table->string('restaurant_email', 100)->unique();
             $table->string('phone_number', 15)->nullable();
             $table->char('p_iva', 11);
             $table->string('image', 255);

@@ -46,7 +46,6 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             /* restaurant */
             'address' => 'required|min:5|max:100',
-            'restaurant_email' => 'required|min:5|max:100|unique:restaurants,restaurant_email',
             'phone_number' => 'nullable|numeric|min_digits:5|max_digits:15',
             'p_iva' => 'required|numeric|min_digits:11|max_digits:11',
             'restaurant_name' => 'required|min:3|max:50',
@@ -75,7 +74,6 @@ class RegisteredUserController extends Controller
             'restaurant_name' => $validated['restaurant_name'],
             'restaurant_slug' => Str::slug($validated['restaurant_name'], '-'),
             'address' => $validated['address'],
-            'restaurant_email' => $validated['restaurant_email'],
             'phone_number' => $validated['phone_number'],
             'p_iva' => $validated['p_iva'],
             'image' => $validated['image'],
@@ -91,6 +89,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('admin/plates');
     }
 }
