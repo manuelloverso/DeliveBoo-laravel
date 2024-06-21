@@ -103,5 +103,53 @@ return [
             "user_email" => "bob@gmail.com",
             "password" => "password",
         ],
+        [
+            "user_name" => "Massimo",
+            "lastname" => "Gladius",
+            "user_email" => "maxgla@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Moamed",
+            "lastname" => "piram",
+            "user_email" => "gpde@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Miriam",
+            "lastname" => "Cento",
+            "user_email" => "giglio@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Sofia",
+            "lastname" => "Cincin",
+            "user_email" => "sofia@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Jet",
+            "lastname" => "Li",
+            "user_email" => "jetli@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Massimo",
+            "lastname" => "Fast",
+            "user_email" => "maxfast@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Gino",
+            "lastname" => "Veloce",
+            "user_email" => "velogin@gmail.com",
+            "password" => "password",
+        ],
+        [
+            "user_name" => "Gianni",
+            "lastname" => "Variante",
+            "user_email" => "varigian@gmail.com",
+            "password" => "password",
+        ],
     ]
 ];

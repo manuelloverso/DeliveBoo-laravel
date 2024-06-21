@@ -55,10 +55,15 @@
             <div class="d-flex gap-2 mb-3">
 
                 @if (Str::startsWith($plate->image, 'https://'))
-                    <img width="150" loading="lazy" src="{{ $plate->image }}" alt="{{ $plate->name }}">
+                    <img width="150" loading="lazy" class="plate-img" src="{{ $plate->image }}" alt="">
+                @elseif ($plate->image == null)
+                    <div class="d-flex flex-column">
+                        <img width="150" class="plate-img" src="{{ Vite::asset('resources/img/plate-default.jpg') }}"
+                            alt="">
+                    </div>
                 @else
-                    <img width="150" loading="lazy" src="{{ asset('storage/' . $plate->image) }}"
-                        alt="{{ $plate->name }}">
+                    <img width="150" loading="lazy" class=" plate-img" src="{{ asset('storage/' . $plate->image) }}"
+                        alt="">
                 @endif
 
                 <div class="mb-3 align-content-center">

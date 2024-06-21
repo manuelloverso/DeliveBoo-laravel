@@ -163,7 +163,85 @@ return [
             "user_id" => "16",
             "types" => [3, 4]
         ],
-
-
+        [
+            "address" => "Via del Colos 6",
+            "restaurant_email" => "hostariamax@gmail.com",
+            "phone_number" => "1275619881",
+            "p_iva" => "1667712855",
+            "restaurant_name" => "Hostaria Maximu",
+            "image" => "https://media-cdn.tripadvisor.com/media/photo-s/01/8f/b2/9e/hostaria-antica-roma.jpg",
+            "user_id" => "17",
+            "types" => [1, 2, 8]
+        ],
+        [
+            "address" => "Via Piramide 55",
+            "restaurant_email" => "gpde@gmail.com",
+            "phone_number" => "1234567899",
+            "p_iva" => "12254685111",
+            "restaurant_name" => "Grande Piramide d'Egitto",
+            "image" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0po83R-DIHXyvCGLn29i5uZYHkeVbQ6atjQ&s",
+            "user_id" => "18",
+            "types" => [1, 8]
+        ],
+        [
+            "address" => "Via Giglio 5",
+            "restaurant_email" => "giglio@gmail.com",
+            "phone_number" => "1234567822",
+            "p_iva" => "12254685122",
+            "restaurant_name" => "Pizzeria Giglio",
+            "image" => "https://c8.alamy.com/compit/h9jm4n/una-tipica-pizzeria-italiana-annidato-in-una-strada-laterale-a-roma-italia-h9jm4n.jpg",
+            "user_id" => "19",
+            "types" => [1, 8]
+        ],
+        [
+            "address" => "Via anni 105",
+            "restaurant_email" => "anni@gmail.com",
+            "phone_number" => "1234567105",
+            "p_iva" => "12254685105",
+            "restaurant_name" => "Pizzeria 105",
+            "image" => "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/PIZZERIA_1830.jpg/1200px-PIZZERIA_1830.jpg",
+            "user_id" => "20",
+            "types" => [1, 8]
+        ],
+        [
+            "address" => "Via Cincin 20",
+            "restaurant_email" => "sofia@gmail.com",
+            "phone_number" => "1234567847",
+            "p_iva" => "1234567802",
+            "restaurant_name" => "Song Fu",
+            "image" => "https://fuguiristorante.it/wp-content/uploads/2021/10/s2.jpg",
+            "user_id" => "21",
+            "types" => [1, 3, 4]
+        ],
+        [
+            "address" => "Via Ghiro 20",
+            "restaurant_email" => "jetli@gmail.com",
+            "phone_number" => "1234567847",
+            "p_iva" => "1234567802",
+            "restaurant_name" => "Jet Li",
+            "image" => "https://i0.wp.com/www.latina24ore.it/wp-content/uploads/2011/02/ristorante-cinese-giapponese-latina-47864223.jpg",
+            "user_id" => "22",
+            "types" => [1, 3, 4]
+        ],
+        [
+            "address" => "Via Giulietta e Romeo 25",
+            "restaurant_email" => "cibofast@hotmail.it",
+            "phone_number" => "1234547123",
+            "p_iva" => "1234564321",
+            "restaurant_name" => "Cibo Fast",
+            "image" => "https://www.partstown.com/about-us/wp-content/uploads/2023/11/what-is-considered-fast-food.jpg",
+            "user_id" => "23",
+            "types" => [7]
+        ],
+        [
+            "address" => "Via Veloce 4",
+            "restaurant_email" => "food@gmail.it",
+            "phone_number" => "1234547122",
+            "p_iva" => "1234564322",
+            "restaurant_name" => "Mangia Veloce",
+            "image" => "https://ilfattoalimentare.it/wp-content/uploads/2013/10/121962967.jpg",
+            "user_id" => "24",
+            "types" => [7]
+        ],
     ],
 ];
