@@ -170,24 +170,6 @@
                                     </div>
                                 </div>
 
-
-                                <div class="mb-4 row">
-                                    <label for="restaurant_email" class="col-md-4 col-form-label text-md-right">Indirizzo
-                                        mail
-                                        Ristorante
-                                        <span class="text-danger">*</span></label>
-                                    <div class="col-md-6">
-                                        <input type="email" required
-                                            class="form-control @error('restaurant_email') is-invalid @enderror"
-                                            name="restaurant_email" id="restaurant_email" aria-describedby="helpId"
-                                            placeholder="" value="{{ old('restaurant_email') }}" />
-                                        @error('restaurant_email')
-                                            <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-
-
                                 <div class="mb-4 row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Numero di
                                         telefono</label>

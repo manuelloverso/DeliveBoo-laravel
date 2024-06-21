@@ -4,7 +4,6 @@ return [
     'restaurants' => [
         [
             "address" => "Via Tiburtina 45",
-            "restaurant_email" => "mario@gmail.com",
             "phone_number" => "1234567895",
             "p_iva" => "12254685651",
             "restaurant_name" => "Da Mario",
@@ -14,7 +13,6 @@ return [
         ],
         [
             "address" => "Via Tuscolana 20",
-            "restaurant_email" => "roya@gmail.com",
             "phone_number" => "1234567855",
             "p_iva" => "1234567800",
             "restaurant_name" => "Roya Sushi",
@@ -25,7 +23,6 @@ return [
         ],
         [
             "address" => "Via Colosseo 15",
-            "restaurant_email" => "bombay@gmail.com",
             "phone_number" => "1234567859",
             "p_iva" => "1234567866",
             "restaurant_name" => "Bombay",
@@ -35,7 +32,6 @@ return [
         ],
         [
             "address" => "Via della Palmarola 15",
-            "restaurant_email" => "gigilapizza@hotmail.it",
             "phone_number" => "1234567886",
             "p_iva" => "1234567868",
             "restaurant_name" => "Gigi La Pizza",
@@ -45,7 +41,6 @@ return [
         ],
         [
             "address" => "Via Mattia Battistini 25",
-            "restaurant_email" => "daciccio@hotmail.it",
             "phone_number" => "1234547886",
             "p_iva" => "1234564868",
             "restaurant_name" => "Da Ciccio",
@@ -55,7 +50,6 @@ return [
         ],
         [
             "address" => "Via Elio Toaf 15",
-            "restaurant_email" => "lacarbonara@hotmail.it",
             "phone_number" => "1234599886",
             "p_iva" => "1255564868",
             "restaurant_name" => "La Carbonara",
@@ -65,7 +59,6 @@ return [
         ],
         [
             "address" => "Via Cavour 3",
-            "restaurant_email" => "nerone@gmail.com",
             "phone_number" => "1234899886",
             "p_iva" => "1255784868",
             "restaurant_name" => "Nerone",
@@ -75,7 +68,6 @@ return [
         ],
         [
             "address" => "Via Italia 23",
-            "restaurant_email" => "bigboy@gmail.com",
             "phone_number" => "1234839886",
             "p_iva" => "1255782868",
             "restaurant_name" => "Big Boy",
@@ -85,7 +77,6 @@ return [
         ],
         [
             "address" => "Via del Colosseo 4",
-            "restaurant_email" => "hostariadelgladiatore@gmail.com",
             "phone_number" => "1235699886",
             "p_iva" => "1665782868",
             "restaurant_name" => "Hostaria del Gladiatore",
@@ -95,7 +86,6 @@ return [
         ],
         [
             "address" => "Via Ostilia 10",
-            "restaurant_email" => "uramakeria@gmail.com",
             "phone_number" => "1275699886",
             "p_iva" => "1667782868",
             "restaurant_name" => "Uramakeria",
@@ -105,7 +95,6 @@ return [
         ],
         [
             "address" => "Via Renzo Rossi 9",
-            "restaurant_email" => "mexicalli@gmail.com",
             "phone_number" => "1275619886",
             "p_iva" => "1667712868",
             "restaurant_name" => "Mexicalli",
@@ -115,7 +104,6 @@ return [
         ],
         [
             "address" => "Via appia 698",
-            "restaurant_email" => "fontanile@gmail.com",
             "phone_number" => "1275619886",
             "p_iva" => "1667712868",
             "restaurant_name" => "Il fontanile",
@@ -125,7 +113,6 @@ return [
         ],
         [
             "address" => "Via portuense 328",
-            "restaurant_email" => "cucaracha@gmail.com",
             "phone_number" => "1275619886",
             "p_iva" => "1667712868",
             "restaurant_name" => "La cucaracha",
@@ -135,7 +122,6 @@ return [
         ],
         [
             "address" => "Viale cortina d'ampezzo 79",
-            "restaurant_email" => "tajmahal@gmail.com",
             "phone_number" => "1275619886",
             "p_iva" => "1667712868",
             "restaurant_name" => "Taj Mahal",
@@ -145,7 +131,6 @@ return [
         ],
         [
             "address" => "Via baveno 2",
-            "restaurant_email" => "superpizza@gmail.com",
             "phone_number" => "1275619886",
             "p_iva" => "1667712868",
             "restaurant_name" => "Super Pizza",
@@ -155,7 +140,6 @@ return [
         ],
         [
             "address" => "Via cristoforo colombo 155",
-            "restaurant_email" => "ishin@gmail.com",
             "phone_number" => "1275619886",
             "p_iva" => "1667712868",
             "restaurant_name" => "Ishin",
@@ -165,7 +149,6 @@ return [
         ],
         [
             "address" => "Via del Colos 6",
-            "restaurant_email" => "hostariamax@gmail.com",
             "phone_number" => "1275619881",
             "p_iva" => "1667712855",
             "restaurant_name" => "Hostaria Maximu",
@@ -175,7 +158,6 @@ return [
         ],
         [
             "address" => "Via Piramide 55",
-            "restaurant_email" => "gpde@gmail.com",
             "phone_number" => "1234567899",
             "p_iva" => "12254685111",
             "restaurant_name" => "Grande Piramide d'Egitto",
@@ -185,7 +167,6 @@ return [
         ],
         [
             "address" => "Via Giglio 5",
-            "restaurant_email" => "giglio@gmail.com",
             "phone_number" => "1234567822",
             "p_iva" => "12254685122",
             "restaurant_name" => "Pizzeria Giglio",
@@ -195,7 +176,6 @@ return [
         ],
         [
             "address" => "Via anni 105",
-            "restaurant_email" => "anni@gmail.com",
             "phone_number" => "1234567105",
             "p_iva" => "12254685105",
             "restaurant_name" => "Pizzeria 105",
@@ -205,7 +185,6 @@ return [
         ],
         [
             "address" => "Via Cincin 20",
-            "restaurant_email" => "sofia@gmail.com",
             "phone_number" => "1234567847",
             "p_iva" => "1234567802",
             "restaurant_name" => "Song Fu",
@@ -215,7 +194,6 @@ return [
         ],
         [
             "address" => "Via Ghiro 20",
-            "restaurant_email" => "jetli@gmail.com",
             "phone_number" => "1234567847",
             "p_iva" => "1234567802",
             "restaurant_name" => "Jet Li",
@@ -225,7 +203,6 @@ return [
         ],
         [
             "address" => "Via Giulietta e Romeo 25",
-            "restaurant_email" => "cibofast@hotmail.it",
             "phone_number" => "1234547123",
             "p_iva" => "1234564321",
             "restaurant_name" => "Cibo Fast",
@@ -235,7 +212,6 @@ return [
         ],
         [
             "address" => "Via Veloce 4",
-            "restaurant_email" => "food@gmail.it",
             "phone_number" => "1234547122",
             "p_iva" => "1234564322",
             "restaurant_name" => "Mangia Veloce",
