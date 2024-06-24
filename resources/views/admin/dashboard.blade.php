@@ -54,7 +54,7 @@
                                     <a class="text-decoration-none btn btn-lg  btn_yellow" href="#">
                                         Statistiche Vendite
                                     </a>
-                                    <a class="text-decoration-none btn btn-lg  btn_orange" href="#">
+                                    <a class="text-decoration-none btn btn-lg  btn_orange" href="{{ route('admin.orders.index') }}">
                                         Ordini
                                     </a>
                                 </div>
