@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\TypeController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Restaurant;
+use App\Http\Controllers\Api\PaymentController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,3 +28,7 @@ Route::get('restaurants', [RestaurantController::class, 'index']);
 Route::get('restaurants/{restaurant}', [RestaurantController::class, 'show']);
 Route::get('types', [TypeController::class, 'index']);
 Route::get('types/{type}', [TypeController::class, 'filter']);
+
+Route::get('payment', [PaymentController::class, 'index']);
+Route::post('payment', [PaymentController::class, 'store']);
+Route::post('orders', [OrderController::class, 'store']);
