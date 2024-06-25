@@ -30,5 +30,4 @@ Route::get('types', [TypeController::class, 'index']);
 Route::get('types/{type}', [TypeController::class, 'filter']);
 
 Route::get('payment', [PaymentController::class, 'index']);
-Route::post('payment', [PaymentController::class, 'store']);
-Route::post('orders', [OrderController::class, 'store']);
+Route::post('orders/process', [OrderController::class, 'processOrder']);
