@@ -29,7 +29,7 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-                'message' => 'Validation has failed',
+                'message' => 'validation',
                 'errors' => $validator->errors()
             ]);
         } else {
@@ -46,9 +46,10 @@ class OrderController extends Controller
                 'paymentMethodNonce' => $request->reqPayload['nonce'],
                 'deviceData' => $request->reqPayload['deviceData'],
                 'options' => [
-                    'submitForSettlement' => True
+                    'submitForSettlement' => True,
                 ]
             ]);
+
 
             if ($result->success) {
                 $newOrder = new Order();
@@ -77,7 +78,7 @@ class OrderController extends Controller
             } else {
                 return response()->json([
                     'success' => false,
-                    'message' => 'transaction has failed',
+                    'failedPayment' => 'transaction has failed',
                 ]);
             }
         }
