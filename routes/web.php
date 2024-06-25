@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PlateController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard'); //admin
         Route::resource('plates', PlateController::class)->parameters(['plates' => 'plate:slug']);
         Route::resource('orders', OrderController::class);
+        Route::resource('barchart', ChartController::class);
 
     });
 
