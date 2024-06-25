@@ -24,28 +24,4 @@ class PaymentController extends Controller
             'response' => $clientToken,
         ]);
     }
-
-    public function store(Request $request)
-    {
-        return response()->json([
-            'success' => true,
-            'response' => $request,
-        ]);
-
-        $gateway = new Gateway([
-            'environment' => 'sandbox',
-            'merchantId' => '55mrb2n9b6hnddxt',
-            'publicKey' => 'r4yn4xhwkjd5szyg',
-            'privateKey' => '1699468aebc9ae859b317856a3988031'
-        ]);
-
-        $result = $gateway->transaction()->sale([
-            'amount' => '10.00',
-            'paymentMethodNonce' => $request->nonce,
-            'deviceData' => $request->deviceData,
-            'options' => [
-                'submitForSettlement' => True
-            ]
-        ]);
-    }
 }
