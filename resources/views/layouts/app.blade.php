@@ -34,8 +34,7 @@
         <nav class="navbar navbar-expand-sm navbar-light bg_orange ">
             <div class="container">
                 <a class="navbar-brand" href="http://localhost:5173/">
-                    <img class="nav-logo" src="{{ Vite::asset('resources/img/logo.svg') }}"
-                        alt="">
+                    <img class="nav-logo" src="{{ Vite::asset('resources/img/logo.svg') }}" alt="">
 
                 </a>
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
@@ -44,55 +43,66 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="collapsibleNavId">
-                    <ul class="navbar-nav me-auto mt-2 mt-lg-0 w-100 justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" href="{{ route('admin.dashboard') }}"
-                                aria-current="page">Dashboard
+                    
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0 w-100 ">
+                        <li class="nav-item btn btn-success m-2">
+                            <a class="nav-link active text-white fs-5 " href="{{ route('admin.orders.index') }}"
+                                aria-current="page">Ordini
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
-
-                        <li class="nav-item dropdown">
-
-                            <ul class="navbar-nav ml-auto">
-                                <!-- Authentication Links -->
-                                @guest
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    </li>
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white"
-                                                href="{{ route('register') }}">{{ __('Registrati') }}</a>
-                                        </li>
-                                    @endif
-                                @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#"
-                                            role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false" v-pre>
-                                            {{ Auth::user()->user_name }}
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item"
-                                                href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
-                                            {{--  <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a> --}}
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                @endguest
-                            </ul>
+                        <li class="nav-item btn btn-light m-2">
+                            <a class="nav-link active fs-5" href="{{ route('admin.plates.index') }}"
+                                aria-current="page">Piatti
+                                <span class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item btn btn-danger m-2">
+                            <a class="nav-link active text-white fs-5" href="{{ route('admin.dashboard') }}"
+                                aria-current="page">Statistiche
+                                <span class="visually-hidden">(current)</span></a>
                         </li>
                     </ul>
+
+
+                    <div class="nav-item dropdown">
+
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                            @guest
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white"
+                                            href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        v-pre>
+                                        {{ Auth::user()->user_name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item"
+                                            href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
+                        </ul>
+                    </div>
 
                 </div>
             </div>

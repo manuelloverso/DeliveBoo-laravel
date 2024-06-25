@@ -4,39 +4,34 @@
 
     <div class="container py-4">
 
+        <h1 class="py-4">Tabella degli ordini ricevuti</h1>
+
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th scope="col">N° ordine</th>
                         <th scope="col">Data ordine</th>
-                        <th scope="col">Nome Cliente</th>
-                        <th scope="col">Cognome Cliente</th>
-                        <th scope="col">Email Cliente</th>
-                        <th scope="col">Indirizzo Cliente</th>
-                        <th scope="col">Tel Cliente</th>
+                        <th scope="col">Cliente</th>
                         <th scope="col">Stato Ordine</th>
-
-
+                        <th>Totale</th>
+                        <th scope="col">Vedi Ordine</th>
                     </tr>
                 </thead>
                 <tbody>
                     @if ($orders->isEmpty())
-                        
-                    <tr class="">
-                        <td colspan="8" scope="row">Non hai ricevuto nessun ordine</td>
-                    </tr>
+                        <tr class="">
+                            <td colspan="8" scope="row">Non hai ricevuto nessun ordine</td>
+                        </tr>
                     @else
                         @foreach ($orders as $order)
                             <tr class="">
                                 <td scope="row">{{ $order->id }}</td>
                                 <td>{{ $order->created_at }}</td>
-                                <td>{{ $order->customer_name }}</td>
-                                <td>{{ $order->customer_lastname }}</td>
-                                <td>{{ $order->customer_email }}</td>
-                                <td>{{ $order->customer_address }}</td>
-                                <td>{{ $order->customer_phone }}</td>
+                                <td>{{ $order->customer_name }} {{ $order->customer_lastname }}</td>
                                 <td>{{ $order->status }}</td>
+                                <td>{{ $order->total }}€</td>
+                                <td><a href="{{ route('admin.orders.show', $order) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
                             </tr>
                         @endforeach
                     @endif
