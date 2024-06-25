@@ -10,6 +10,8 @@
 
     <title>DeliveRome</title>
 
+    {{-- chart.js  --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Fonts -->
 
@@ -22,6 +24,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
@@ -43,7 +47,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="collapsibleNavId">
-                    
+
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0 w-100 ">
                         <li class="nav-item btn btn-success m-2">
                             <a class="nav-link active text-white fs-5 " href="{{ route('admin.orders.index') }}"
