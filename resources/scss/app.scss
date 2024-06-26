@@ -1,32 +1,23 @@
-@use 'partials/dashboard.scss';
-@use 'partials/plate-index.scss';
-@use 'partials/navbar.scss';
-@use 'partials/not-found.scss';
+@use "partials/dashboard.scss";
+@use "partials/plate-index.scss";
+@use "partials/navbar.scss";
+@use "partials/not-found.scss";
 
+@import "~bootstrap/scss/bootstrap";
 
-@import '~bootstrap/scss/bootstrap';
-
-
-body{
-    font-family:  "Rubik", sans-serif;
-  
+body {
+    font-family: "Rubik", sans-serif;
+    color: #212529;
 }
-
-
 
 .bg_orange {
     background-color: rgb(255, 157, 0);
-    
 }
 
 .bg_orange-dark {
     background-color: rgb(255, 117, 69);
-    
 }
 
 .bg_dark {
     background-color: rgb(255, 64, 0);
-    
 }
-
-

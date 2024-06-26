@@ -9,20 +9,22 @@
         <h2>Ordine effettuato correttamente</h2>
     @endif
 
-    @if ($lead['target'] == 'restaurant')
-        <h2>Informazioni Cliente</h2>
-        <p><strong>Ordine Numero: </strong>{{ $lead['order_id'] }}</p>
-        <p><strong>Email: </strong>{{ $lead['customer_email'] }}</p>
-        <p><strong>Indirizzo: </strong>{{ $lead['customer_address'] }}</p>
-        <p><strong>Num. di telefono: </strong>{{ $lead['customer_phone'] }}</p>
-        <p><strong>Totale Ordine: </strong>{{ $lead['order_total'] }}€</p>
-    @else
-        <h2>Informazioni Ristorante</h2>
-        <p><strong>Totale Ordine: </strong>{{ $lead['order_total'] }}€</p>
-        <p><strong>Nome: </strong>{{ $lead['restaurant_name'] }}€</p>
-        <p><strong>Indirizzo: </strong>{{ $lead['restaurant_address'] }}</p>
-        <p><strong>Num. di telefono: </strong>{{ $lead['restaurant_phone'] }}</p>
-    @endif
+    <div class="info">
+        @if ($lead['target'] == 'restaurant')
+            <h3>Informazioni Cliente</h3>
+            <p><strong>Ordine Numero: </strong>{{ $lead['order_id'] }}</p>
+            <p><strong>Email: </strong>{{ $lead['customer_email'] }}</p>
+            <p><strong>Indirizzo: </strong>{{ $lead['customer_address'] }}</p>
+            <p><strong>Num. di telefono: </strong>{{ $lead['customer_phone'] }}</p>
+            <p><strong>Totale Ordine: </strong>{{ $lead['order_total'] }}€</p>
+        @else
+            <h3>Informazioni Ristorante</h3>
+            <p><strong>Totale Ordine: </strong>{{ $lead['order_total'] }}€</p>
+            <p><strong>Nome: </strong>{{ $lead['restaurant_name'] }}</p>
+            <p><strong>Indirizzo: </strong>{{ $lead['restaurant_address'] }}</p>
+            <p><strong>Num. di telefono: </strong>{{ $lead['restaurant_phone'] }}</p>
+        @endif
+    </div>
 
     <h3>{{ $lead['target'] == 'restaurant' ? 'Contenuto' : 'Riepilogo' }} Ordine</h3>
     <div class="cart">
@@ -54,6 +56,14 @@
 </div>
 
 <style>
+    .info {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: rgb(255, 157, 0);
+        border-radius: 20px;
+        margin-bottom: 1rem
+    }
+
     .button {
         display: inline-block;
         color: white;
@@ -67,6 +77,7 @@
 
     .body {
         font-family: sans-serif;
+        color: #212529
     }
 
     .header {
