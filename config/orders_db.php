@@ -11,7 +11,8 @@ return [
             "customer_email" => "povero@gmail.com",
             "status" => "accettato",
             "total" => "120.00",
-            "date" => "2024-1-5"
+            "date" => "2024-1"
+
         ],
 
         [
@@ -23,7 +24,8 @@ return [
             "customer_email" => "ricco@gmail.com",
             "status" => "rifiutato",
             "total" => "12.60",
-            "date" => "2024-1-5"
+            "date" => "2023-9"
+
         ],
 
         [
@@ -35,7 +37,9 @@ return [
             "customer_email" => "tizio@gmail.com",
             "status" => "spedito",
             "total" => "93.23",
-            "date" => "2024-1-5"
+            "date" => "2024-3"
+
+
         ],
 
         [
@@ -47,7 +51,9 @@ return [
             "customer_email" => "caio@gmail.com",
             "status" => "accettato",
             "total" => "10.00",
-            "date" => "2024-2-5"
+            "date" => "2024-1"
+
+
         ],
 
         [
@@ -59,7 +65,8 @@ return [
             "customer_email" => "pippo@gmail.com",
             "status" => "rifiutato",
             "total" => "20.00",
-            "date" => "2024-1-5"
+            "date" => "2024-3"
+
         ],
 
         [
@@ -71,7 +78,9 @@ return [
             "customer_email" => "pluto@gmail.com",
             "status" => "consegnato",
             "total" => "60.12",
-            "date" => "2024-2-5"
+
+            "date" => "2024-3"
+
         ],
 
         [
@@ -83,7 +92,8 @@ return [
             "customer_email" => "paperino@gmail.com",
             "status" => "fallito",
             "total" => "110.00",
-            "date" => "2024-2-5"
+            "date" => "2024-3"
+
         ],
     ]
 ];
