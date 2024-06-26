@@ -11,7 +11,7 @@ return [
             "customer_email" => "povero@gmail.com",
             "status" => "accettato",
             "total" => "120.00",
-            "date" => "2024-1"
+            "date" => "2024-1-5"
 
         ],
 
@@ -24,7 +24,7 @@ return [
             "customer_email" => "ricco@gmail.com",
             "status" => "rifiutato",
             "total" => "12.60",
-            "date" => "2023-9"
+            "date" => "2023-1-6"
 
         ],
 
@@ -37,13 +37,13 @@ return [
             "customer_email" => "tizio@gmail.com",
             "status" => "spedito",
             "total" => "93.23",
-            "date" => "2024-3"
+            "date" => "2024-2-10"
 
 
         ],
 
         [
-            "restaurant_id" => "2",
+            "restaurant_id" => "1",
             "customer_name" => "caio",
             "customer_lastname" => "cliente",
             "customer_address" => 'via roma 12',
@@ -51,13 +51,13 @@ return [
             "customer_email" => "caio@gmail.com",
             "status" => "accettato",
             "total" => "10.00",
-            "date" => "2024-1"
+            "date" => "2024-2-24"
 
 
         ],
 
         [
-            "restaurant_id" => "2",
+            "restaurant_id" => "1",
             "customer_name" => "pippo",
             "customer_lastname" => "cliente",
             "customer_address" => 'via roma 12',
@@ -65,12 +65,12 @@ return [
             "customer_email" => "pippo@gmail.com",
             "status" => "rifiutato",
             "total" => "20.00",
-            "date" => "2024-3"
+            "date" => "2024-3-14"
 
         ],
 
         [
-            "restaurant_id" => "3",
+            "restaurant_id" => "1",
             "customer_name" => "pluto",
             "customer_lastname" => "cliente",
             "customer_address" => 'via roma 12',
@@ -78,13 +78,12 @@ return [
             "customer_email" => "pluto@gmail.com",
             "status" => "consegnato",
             "total" => "60.12",
-
-            "date" => "2024-3"
+            "date" => "2024-3-3"
 
         ],
 
         [
-            "restaurant_id" => "3",
+            "restaurant_id" => "1",
             "customer_name" => "paperino",
             "customer_lastname" => "cliente",
             "customer_address" => 'via roma 12',
@@ -92,7 +91,7 @@ return [
             "customer_email" => "paperino@gmail.com",
             "status" => "fallito",
             "total" => "110.00",
-            "date" => "2024-3"
+            "date" => "2024-3-12"
 
         ],
     ]
