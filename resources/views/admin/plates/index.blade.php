@@ -20,15 +20,15 @@
             </div>
 
             <div class="table-responsive">
-                <table class="table table-dark">
+                <table class="table table-warning">
                     <thead>
                         <tr>
                             <th class="text-center" scope="col">Id</th>
                             <th scope="col">Immagine</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Prezzo</th>
-                            <th class="text-center" scope="col">Azioni</th>
                             <th class="text-center" scope="col">Disponibile</th>
+                            <th class="text-center" scope="col">Azioni</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,10 +63,10 @@
 
                                 <td class="text-center">
                                     <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate) }}"><i
-                                            class="fa-solid fa-pen"></i> Modifica</a>
-                                    <a class="btn btn-danger"href="#"
+                                            class="fa-solid fa-pen"></i></a>
+                                    <a class="btn btn-danger text-dark"href="#"
                                         data-bs-toggle="modal"data-bs-target="#modalId-{{ $plate->id }}"><i
-                                            class="fa-solid fa-trash-can"></i> Elimina</a>
+                                            class="fa-solid fa-trash-can"></i></a>
                                 </td>
                             </tr>
 
