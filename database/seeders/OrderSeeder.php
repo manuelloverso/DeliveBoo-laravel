@@ -25,6 +25,7 @@ class OrderSeeder extends Seeder
             $newOrder->customer_email = $order['customer_email'];
             $newOrder->status = $order['status'];
             $newOrder->total = $order['total'];
+            $newOrder->created_at = $order['date'];
             $newOrder->save();
         }
     }

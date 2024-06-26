@@ -60,7 +60,7 @@
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item btn btn-danger m-2">
-                            <a class="nav-link active text-white fs-5" href="{{ route('admin.dashboard') }}"
+                            <a class="nav-link active text-white fs-5" href="{{ route('admin.barchart.index') }}"
                                 aria-current="page">Statistiche
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
