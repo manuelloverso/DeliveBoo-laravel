@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\NewMail;
 use App\Models\Order;
+use App\Models\Restaurant;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Braintree\Gateway;
-
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -70,6 +73,41 @@ class OrderController extends Controller
                         'plate_quantity' => $plate['quantity'],
                     ]);
                 }
+                //recupero la mail del ristorante
+                $restaurant = Restaurant::find($request->restaurant_id);
+                $user = User::find($restaurant->user_id);
+                $restaurant_email = $user->user_email;
+
+
+                //costruisco la lead del ristorante
+                $restaurant_lead = [
+                    'target' => 'restaurant',
+                    'address' => 'noreply@deliverome.it',
+                    'order_id' => $newOrder->id,
+                    'order_total' => $request->total,
+                    'customer_email' => $request->customer_email,
+                    'customer_phone' => $request->customer_phone,
+                    'customer_address' => $request->customer_address,
+                    'cart' => $request->cart
+                ];
+
+                //costruisco la mail del cliente
+                $customer_lead = [
+                    'target' => 'customer',
+                    'address' => 'noreply@deliverome.it',
+                    'restaurant_name' => $restaurant->restaurant_name,
+                    'restaurant_address' => $restaurant->address,
+                    'restaurant_phone' => $restaurant->phone_number,
+                    'order_total' => $request->total,
+                    'cart' => $request->cart
+                ];
+
+
+                //mando la mail al ristorante
+                Mail::to($restaurant_email)->send(new NewMail($restaurant_lead));
+
+                //mando la mail al cliente
+                Mail::to($request->customer_email)->send(new NewMail($customer_lead));
 
                 return response()->json([
                     'success' => true,
