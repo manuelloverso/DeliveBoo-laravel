@@ -22,6 +22,24 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/mailable', function () {
+    /* $lead = [
+        'name' => 'Fabio',
+        'email' => 'fabio@example.com',
+        'message' => 'lorem ipsum dolor hi'
+    ]; */
+
+    $lead = [
+
+        'address' => 'hi',
+        'message' => 'eivjwnri',
+    ];
+
+
+
+    return new App\Mail\NewMail($lead);
+});
+
 Route::middleware(['auth', 'verified'])
     ->name('admin.')
     ->prefix('admin')
@@ -32,7 +50,6 @@ Route::middleware(['auth', 'verified'])
         Route::resource('plates', PlateController::class)->parameters(['plates' => 'plate:slug']);
         Route::resource('orders', OrderController::class);
         Route::resource('barchart', ChartController::class);
-
     });
 
 /* Route::middleware('auth')->group(function () {
