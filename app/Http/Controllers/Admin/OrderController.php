@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Plate;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Pagination\Paginator;
+
 use Illuminate\Support\Facades\DB;
+
 
 class OrderController extends Controller
 {
@@ -19,7 +20,11 @@ class OrderController extends Controller
     {
         $user = auth()->user();
         $restaurant = $user->restaurant;
-        $orders = $restaurant->orders->sortByDesc('id');
+        //$orders = $restaurant->orders->sortByDesc('id');
+        $orders = DB::table('orders')->where('restaurant_id', $restaurant->id)->orderByDesc('id')->paginate(12);
+        //dd($orders);
+
+
 
         return view('admin.orders.index', compact('orders'));
     }
