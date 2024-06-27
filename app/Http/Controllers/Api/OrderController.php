@@ -21,7 +21,7 @@ class OrderController extends Controller
             'customer_name' => 'required|min:2|max:50',
             'customer_lastname' => 'required|min:2|max:50',
             'customer_address' => 'required|min:3|max:255',
-            'customer_phone' => 'required|min_digits:5|max_digits:15',
+            'customer_phone' => 'required|min:5|max:15',
             'total' => 'required|numeric|min:0|max:1000|decimal:2',
             'customer_email' => 'required|email|max:100',
             'restaurant_id' => 'required|exists:restaurants,id',

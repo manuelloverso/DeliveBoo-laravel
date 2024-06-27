@@ -33,7 +33,7 @@
                                 <td>{{ $order->customer_name }} {{ $order->customer_lastname }}</td>
                                 <td>{{ $order->status }}</td>
                                 <td>{{ $order->total }}€</td>
-                                <td><a href="{{ route('admin.orders.show', $order) }}" class="btn btn-primary"><i
+                                <td><a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-primary"><i
                                             class="fa-solid fa-eye"></i></a></td>
                             </tr>
                         @endforeach
@@ -41,7 +41,7 @@
                 </tbody>
             </table>
         </div>
-        {{-- {{ $orders->links('pagination::bootstrap-5') }} --}}
+        {{ $orders->links('pagination::bootstrap-5') }}
 
     </div>
 
