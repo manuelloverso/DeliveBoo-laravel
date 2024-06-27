@@ -7,6 +7,8 @@ use App\Models\Filter;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use App\Models\Type;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\DB;
 
 class TypeController extends Controller
 {
@@ -19,19 +21,16 @@ class TypeController extends Controller
         ]);
     }
 
+
     public function filter($type_ids)
     {
+        $final_array = explode(',', $type_ids);
 
-        /* get an array of types based on the array received by the api call */
-        $remove_first = str_replace('[', '', $type_ids);
-        $remove_second = str_replace(']', '', $remove_first);
-        $final_array = explode(',', $remove_second);
         $types = [];
         foreach ($final_array as $type_id) {
             $type = Type::find($type_id);
             array_push($types, $type->name);
         }
-
 
         /* get the right restaurants */
         $restaurants = Restaurant::with('types')->get();
