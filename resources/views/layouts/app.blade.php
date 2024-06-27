@@ -34,58 +34,50 @@
 <body>
     <div id="app">
 
+        <div class="row">
+            <div class="col-2">
+                <nav class="nav flex-column bg_orange">
+                   
+                    <!--logo-->
+                    <a class="nav-link mx-auto my-5 " href="http://localhost:5173/">
+                        <img class="nav-logo" src="{{ Vite::asset('resources/img/logo.svg') }}" alt="">
 
-        <nav class="navbar navbar-expand-sm navbar-light bg_orange ">
-            <div class="container">
-                <a class="navbar-brand" href="http://localhost:5173/">
-                    <img class="nav-logo" src="{{ Vite::asset('resources/img/logo.svg') }}" alt="">
+                    </a>
+                     <!--orders-link-->
+                    <a class="nav-link active text-white fs-2 px-2 text-center" href="{{ route('admin.orders.index') }}"
+                        aria-current="page">Ordini
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                     <!--plates-link-->
+                    <a class="nav-link active text-white fs-2 px-2 text-center" href="{{ route('admin.plates.index') }}"
+                        aria-current="page">Piatti
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                     <!--statistics-link-->
+                    <a class="nav-link active text-white fs-2 px-2 text-center" href="{{ route('admin.barchart.index') }}"
+                        aria-current="page">Statistiche
+                        <span class="visually-hidden">(current)</span>
+                    </a>
 
-                </a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="collapsibleNavId">
+                    
+ <!--dropdown-link-->
+                    <div class="nav-link dropdown mx-2 mt-auto">
 
-                    <ul class="navbar-nav me-auto mt-2 mt-lg-0 w-100 ">
-                        <li class="nav-item btn btn-success m-2">
-                            <a class="nav-link active text-white fs-5 " href="{{ route('admin.orders.index') }}"
-                                aria-current="page">Ordini
-                                <span class="visually-hidden">(current)</span></a>
-                        </li>
-                        <li class="nav-item btn btn-light m-2">
-                            <a class="nav-link active fs-5" href="{{ route('admin.plates.index') }}"
-                                aria-current="page">Piatti
-                                <span class="visually-hidden">(current)</span></a>
-                        </li>
-                        <li class="nav-item btn btn-danger m-2">
-                            <a class="nav-link active text-white fs-5" href="{{ route('admin.barchart.index') }}"
-                                aria-current="page">Statistiche
-                                <span class="visually-hidden">(current)</span></a>
-                        </li>
-                    </ul>
-
-
-                    <div class="nav-item dropdown">
-
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ">
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link text-white"
-                                            href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                     </li>
                                 @endif
                             @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#"
-                                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->user_name }}
                                     </a>
 
@@ -108,15 +100,20 @@
                         </ul>
                     </div>
 
-                </div>
+
             </div>
-        </nav>
 
+            </nav>
 
+            <div class="col-10">
+                <main>
 
-        <main class="">
-            @yield('content')
-        </main>
+                    @yield('content')
+                </main>
+            </div>
+
+        </div>
+
     </div>
 </body>
 
