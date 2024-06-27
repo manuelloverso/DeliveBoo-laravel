@@ -51,10 +51,12 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <a class="text-decoration-none btn btn-lg  btn_yellow" href="#">
-                                        Statistiche Vendite
+                                    <a class="text-decoration-none btn btn-lg  btn_yellow"
+                                        href="{{ route('admin.barchart.index') }}">
+                                        Statistiche
                                     </a>
-                                    <a class="text-decoration-none btn btn-lg  btn_orange" href="{{ route('admin.orders.index') }}">
+                                    <a class="text-decoration-none btn btn-lg  btn_orange"
+                                        href="{{ route('admin.orders.index') }}">
                                         Ordini
                                     </a>
                                 </div>

@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Plate;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
+
 class OrderController extends Controller
 {
     /**
@@ -16,9 +18,9 @@ class OrderController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $restaurant = $user->restaurant;        
+        $restaurant = $user->restaurant;
         $orders = $restaurant->orders->sortByDesc('id');
-        
+
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -45,25 +47,26 @@ class OrderController extends Controller
     {
         $data = [];
         $pivot = DB::table('order_plate')->where('order_id', $order->id)->get();
-        foreach($order->plates as $plate){
+        foreach ($order->plates as $plate) {
             $qty = null;
             $price = null;
             $filtPivot = $pivot->where('plate_id', $plate->id);
-            
-            foreach($filtPivot as $el){
-               $qty = $el->plate_quantity;
-               $price = $el->plate_price;
-            };
+
+            foreach ($filtPivot as $el) {
+                $qty = $el->plate_quantity;
+                $price = $el->plate_price;
+            }
+            ;
             // dd($plate->name);
             array_push($data, [
                 'name' => $plate->name,
                 'qty' => $qty,
-                'price' => $price, 
+                'price' => $price,
             ]);
         }
-        
+
         $plates = json_encode($data);
-        
+
         return view('admin.orders.show', compact('plates', 'order'));
     }
 
