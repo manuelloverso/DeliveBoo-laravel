@@ -31,6 +31,21 @@ class OrderSeeder extends Seeder
             $newOrder->save();
         }
 
+        for ($i = 0; $i < 150; $i++) {
+            $newOrder = new Order();
+            $newOrder->restaurant_id = 1;
+            $newOrder->customer_name = $faker->firstName('male');
+            $newOrder->customer_lastname = $faker->lastName();
+            $newOrder->customer_address = $faker->streetAddress();
+            //dd($newOrder);
+            $newOrder->customer_phone = 3214213652;
+            $newOrder->customer_email = $faker->freeEmail();
+            $newOrder->status = 'consegnato';
+            $newOrder->total = $faker->randomFloat(2, 5, 99);
+            $newOrder->created_at = $faker->dateTimeBetween('-1 years', 'today');
+            $newOrder->save();
+        }
+
         for ($i = 0; $i < 200; $i++) {
             $newOrder = new Order();
             $newOrder->restaurant_id = $faker->numberBetween(1, 5);
