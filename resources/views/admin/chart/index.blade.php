@@ -32,7 +32,7 @@
             data: {
                 labels: @json($data['labels']),
                 datasets: [{
-                    label: 'N° Data',
+                    label: 'N° Ordini',
                     data: @json($data['data']),
                     backgroundColor: 'rgba(255, 220, 0, 0.5)',
                     borderColor: 'rgba(255, 220, 0, 1)',
