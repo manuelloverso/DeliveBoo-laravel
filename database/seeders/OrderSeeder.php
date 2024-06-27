@@ -31,7 +31,7 @@ class OrderSeeder extends Seeder
             $newOrder->save();
         }
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 150; $i++) {
             $newOrder = new Order();
             $newOrder->restaurant_id = 1;
             $newOrder->customer_name = $faker->firstName('male');

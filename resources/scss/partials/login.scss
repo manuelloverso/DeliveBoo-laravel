@@ -1,0 +1,47 @@
+$bgWidth: 10000px;
+.login, .register{
+    
+    min-height: calc(100vh - 116px);
+    margin-top: -24px;
+    padding-top: 2rem;
+    .card{
+        margin: auto;
+        
+        background-color: rgba(0, 0, 0, 0.149);
+        h3{
+            margin: 2rem 0;
+        }
+        .bg_btn{
+            background: linear-gradient(90deg,
+      rgba(250, 89, 0, 1) 9%,
+      rgba(255, 213, 0, 1) 100%);
+        }
+        
+    }
+    
+
+    background: linear-gradient(to right, #1e5799 0%,#2ce0bf 19%,#76dd2c 40%,#dba62b 60%,#e02cbf 83%,#1e5799 100%); 
+    background-size: $bgWidth 100%;
+    animation: bg 15s linear infinite ;
+  }
+  
+  @keyframes bg{
+    0%{
+      background-position-x: 0;
+    }
+    
+    100%{
+      background-position-x: $bgWidth;
+    }
+
+
+
+
+
+
+
+
+
+
+    
+}
