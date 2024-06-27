@@ -3,6 +3,8 @@
 @section('content')
 
     <div class="container py-4">
+        <a class="btn btn-secondary" href="{{ route('admin.dashboard') }}"><i class="fa fa-arrow-circle-left"
+                aria-hidden="true"></i></a>
 
         <h1 class="py-4">Tabella degli ordini ricevuti</h1>
 
@@ -31,13 +33,15 @@
                                 <td>{{ $order->customer_name }} {{ $order->customer_lastname }}</td>
                                 <td>{{ $order->status }}</td>
                                 <td>{{ $order->total }}€</td>
-                                <td><a href="{{ route('admin.orders.show', $order) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
+                                <td><a href="{{ route('admin.orders.show', $order) }}" class="btn btn-primary"><i
+                                            class="fa-solid fa-eye"></i></a></td>
                             </tr>
                         @endforeach
                     @endif
                 </tbody>
             </table>
         </div>
+        {{-- {{ $orders->links('pagination::bootstrap-5') }} --}}
 
     </div>
 
