@@ -130,7 +130,7 @@ class ChartController extends Controller
 
 
 
-        return view('admin.chart.show', compact('data', 'plates', 'plateData'));
+        return view('admin.chart.show', compact('data', 'plates', 'plateData', 'plateId'));
 
     }
 }
