@@ -34,8 +34,8 @@
 <body>
     <div id="app">
 
-        <div class="row row_app">
-            <div class="col-2 col-nav">
+        <div class="row row_app gap-3">
+            <div class="col-1 col-nav">
                 <nav class="nav flex-column bg_orange nav-dashboard">
                    
                     <!--logo-->
@@ -44,17 +44,17 @@
 
                     </a>
                      <!--orders-link-->
-                    <a class="nav-link active text-white fs-2 px-2 text-center link_user" href="{{ route('admin.orders.index') }}"
+                    <a class="nav-link active text-white fs-6 px-2 text-center link_user " href="{{ route('admin.orders.index') }}"
                         aria-current="page">Ordini
                         <span class="visually-hidden">(current)</span>
                     </a>
                      <!--plates-link-->
-                    <a class="nav-link active text-white fs-2 px-2 text-center link_user" href="{{ route('admin.plates.index') }}"
-                        aria-current="page">Piatti
+                    <a class="nav-link active text-white fs-6 px-2 text-center link_user" href="{{ route('admin.plates.index') }}"
+                        aria-current="page">Menù
                         <span class="visually-hidden">(current)</span>
                     </a>
                      <!--statistics-link-->
-                    <a class="nav-link active text-white fs-2 px-2 text-center link_user" href="{{ route('admin.barchart.index') }}"
+                    <a class="nav-link active text-white fs-6 px-2 text-center link_user" href="{{ route('admin.barchart.index') }}"
                         aria-current="page">Statistiche
                         <span class="visually-hidden">(current)</span>
                     </a>
@@ -76,7 +76,7 @@
                                 @endif
                             @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-6" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->user_name }}
                                     </a>
@@ -105,7 +105,7 @@
 
             </nav>
 
-            <div class="col-10 container_main">
+            <div class="col-11 col-md-10  mx-auto">
                 <main>
 
                     @yield('content')

@@ -1,5 +1,8 @@
 .dashboard {
-    &  .container {
+    height: 100vh;
+    overflow: auto;
+  overflow-x: hidden;
+    &  .container-fluid {
         &  .card {
             padding: 0 !important;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -9,13 +12,17 @@
             }
         }
 
-        & .grafic-card{
+        & .card{
             &  a{
-                border-radius: none;
+                
                 background-color:rgb(255, 117, 69) ;
                 
             }
         }
+
+       
+
+        
     }
 
 

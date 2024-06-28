@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="dashboard">
-        <div class=" container py-4">
-            <div class="row gap-4">
+        <div class=" container-fluid py-5">
+            <div class="row gap-5 ">
                 @include('partials.message-error')
 
                 <!--info-restaurant-->
-                <div class="card mb-3 mx-auto col-12">
+                <div class=" card col-12 col-sm-6 col-md-6 col-lg-12 text-body-secondary mx-auto">
                     <div class="row g-0">
                         <div class="col-md-4">
                             @if (Str::startsWith($user->restaurant->image, 'https://'))
@@ -19,7 +19,7 @@
                             @endif
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body">
+                            <div class="card-body px-4">
                                 <div>
 
                                     <h1>{{ $user->restaurant->restaurant_name }}</h1>
@@ -44,45 +44,52 @@
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="row gap-4 ">
-                        <!--statistic-->
-                        <div class="card grafic-card mt-4 col-12 col-sm-4">
-                            <img src="{{ Vite::asset('resources/img/grafico.jpg') }}" class="card-img-top"
-                                alt="statistic grafic">
-                            <div class="card-body p-0">
-                                <a class="text-decoration-none btn text-white w-100"
-                                    href="{{ route('admin.barchart.index') }}">
-                                    Le tue statistiche
-                                </a>
-                                <p class="card-text px-5 py-2 text-center">
-                                    Tieni sempre sotto controllo il rendimento del tuo ristorante
-                                </p>
-                            </div>
-                        </div>
-
-                        <!--info-orders-->
-                        <div class="card mb-3 col-12 col-sm-4 mt-4 ">
-                            <div class="row g-0">
-
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural
-                                            lead-in to
-                                            additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                                ago</small></p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <img src="..." class="img-fluid rounded-start" alt="...">
-                                </div>
-                            </div>
-                        </div>
+                <!--statistic-->
+                <div class="card grafic-card col-12 col-sm-4 col-md-6 col-lg-4 text-body-secondary mx-auto">
+                    <img src="{{ Vite::asset('resources/img/grafico.jpg') }}" class="card-img-top" alt="statistic grafic">
+                    <div class="card-body p-0">
+                        <a class="text-decoration-none btn text-white w-100 rounded-0 text-uppercase fs-5"
+                            href="{{ route('admin.barchart.index') }}">
+                            Le tue statistiche
+                        </a>
+                        <p class="card-text px-5 py-2 text-center">
+                            Ti aiutiamo a tenere sempre sotto controllo il rendimento del tuo ristorante
+                        </p>
                     </div>
+                </div>
 
+                <!--menu-->
+                <div class="card grafic-card col-12 col-sm-3 col-md-6 col-lg-3 text-body-secondary mx-auto">
+                    <img src="{{ Vite::asset('resources/img/piatti.png') }}" class="card-img-top" alt="statistic grafic">
+                    <div class="card-body p-0">
+                       
+                        <p class="card-text px-5 py-2 text-center ">
+                            Aggiungi, modifica o elimina i piatti del tuo menù<br>
+                            Quando vuoi e come vuoi!
+                        </p>
+                         
+                    </div>
+                    <a class="text-decoration-none btn text-white w-100 rounded-0 text-uppercase fs-5 rounded-bottom"
+                            href="{{ route('admin.plates.index') }}">
+                           Il tuo menù 
+                        </a>
+                </div>
+
+                <!--info-orders-->
+                <div class="card grafic-card col-12 col-sm-5 col-md-6 col-lg-4 text-body-secondary mx-auto">
+                    <img src="{{ Vite::asset('resources/img/deliverome.png') }}" class="img-fluid rounded-top"
+                        alt="delivery">
+                    <div class="card-body p-0">
+                        <a class="text-decoration-none btn text-white w-100 rounded-0 text-uppercase fs-5"
+                            href="{{ route('admin.orders.index') }}">
+                            Ordini ricevuti
+                        </a>
+                        <p class="card-text px-5 py-2 text-center">
+                            Il tuo storico dal giorno zero <br>
+                            Con noi nessun ordine andrá perso!
+
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -92,29 +99,12 @@
 
         </div>
 
-
-
-        <div class="d-flex flex-column align-items-end">
-            <div class="py-1">
-                <a class="text-decoration-none btn btn-lg btn_yellow" href="{{ route('admin.plates.index') }}">
-                    Menu
-                </a>
-            </div>
-            <div>
-                <a class="text-decoration-none btn btn-lg  btn_yellow" href="{{ route('admin.barchart.index') }}">
-                    Statistiche
-                </a>
-                <a class="text-decoration-none btn btn-lg  btn_orange" href="{{ route('admin.orders.index') }}">
-                    Ordini
-                </a>
-            </div>
-
-            {{-- @else
+        {{-- @else
                 <a class="btn btn-primary" href="{{ route('admin.restaurants.create') }}">
                     Crea il tuo ristorante!
                 </a>
             @endif --}}
 
-        </div>
+    </div>
     </div>
 @endsection
