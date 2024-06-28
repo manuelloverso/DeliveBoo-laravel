@@ -1,0 +1,18 @@
+.table-order {
+    .fa-arrow-circle-left {
+        color: rgb(255, 117, 69);
+        font-size: 45px;
+
+    }
+
+
+    @media (max-width: 468px) {
+        .customer-order {
+            display: none;
+        }
+    }
+
+   
+
+   
+}
