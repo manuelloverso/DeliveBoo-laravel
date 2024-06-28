@@ -7,8 +7,10 @@ $plateList = json_decode($plates);
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <a class="btn btn-secondary mt-4" href="{{ route('admin.orders.index') }}"><i class="fa fa-arrow-circle-left"
+        <a class="btn mt-4" href="{{ route('admin.orders.index') }}"><i class="fa fa-arrow-circle-left"
                 aria-hidden="true"></i></a>
+
+                
         <h1 class="py-4">Dettagli ordine</h1>
         <h5 class="text-secondary pb-4">Ordine n°{{ $order->id }} del {{ $order->created_at }}</h5>
 
