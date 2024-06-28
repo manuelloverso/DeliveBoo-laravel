@@ -1,6 +1,5 @@
 @use "partials/dashboard.scss";
 @use "partials/plate-index.scss";
-@use "partials/navbarDashboard.scss";
 @use "partials/not-found.scss";
 
 @use "partials/navbar.scss";
@@ -29,27 +28,26 @@ body {
     background-color: rgb(255, 64, 0);
 }
 
-.row_app{
+.row_app {
     height: 100vh;
-    
+
 }
 
-.container_main{
+.container_main {
     height: 100vh;
-    overflow: auto; 
+    overflow: auto;
 }
 
 ::-webkit-scrollbar {
     width: 3px;
-  }
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgb(255, 255, 255);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--accent);
-    box-shadow: inset 0 0 5px rgba(195, 195, 195, 0.16); 
-    border-radius: 20px;
-  }
- 
+}
 
-  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    box-shadow: inset 0 0 5px rgba(195, 195, 195, 0.16);
+    border-radius: 20px;
+}
