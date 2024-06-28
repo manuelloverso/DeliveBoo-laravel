@@ -21,13 +21,13 @@ class OrderController extends Controller
         $user = auth()->user();
         $restaurant = $user->restaurant;
         //$orders = $restaurant->orders->sortByDesc('id');
-        $orders = DB::table('orders')->where('restaurant_id', $restaurant->id)->orderByDesc('id')->paginate(12);
+        $orders = DB::table('orders')->where('restaurant_id', $restaurant->id)->orderByDesc('created_at')->paginate(12);
+
         //dd($orders);
 
 
 
         return view('admin.orders.index', compact('orders'));
-        
     }
 
     /**
@@ -61,8 +61,7 @@ class OrderController extends Controller
             foreach ($filtPivot as $el) {
                 $qty = $el->plate_quantity;
                 $price = $el->plate_price;
-            }
-            ;
+            };
             // dd($plate->name);
             array_push($data, [
                 'name' => $plate->name,

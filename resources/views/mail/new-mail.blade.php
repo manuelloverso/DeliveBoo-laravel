@@ -30,17 +30,17 @@
     <div class="cart">
         <table>
             <thead>
-                <th>ID</th>
                 <th>Nome Piatto</th>
                 <th>Prezzo</th>
+                <th>Quantità</th>
             </thead>
             <tbody>
 
                 @foreach ($lead['cart'] as $plate)
                     <tr>
-                        <td><strong>{{ $plate['plateObj']['id'] }}</strong></td>
                         <td>{{ $plate['plateObj']['name'] }}</td>
                         <td>{{ $plate['plateObj']['price'] }}€</td>
+                        <td>{{ $plate['quantity'] }}</td>
                     </tr>
                 @endforeach
             </tbody>
