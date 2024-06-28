@@ -49,21 +49,7 @@
                 <div class="collapse navbar-collapse " id="collapsibleNavId">
 
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0 w-100">
-                        <li class="nav-item btn btn-success m-2">
-                            <a class="nav-link active text-white fs-5 " href="{{ route('admin.orders.index') }}"
-                                aria-current="page">Ordini
-                                <span class="visually-hidden">(current)</span></a>
-                        </li>
-                        <li class="nav-item btn btn-light m-2">
-                            <a class="nav-link active fs-5" href="{{ route('admin.plates.index') }}"
-                                aria-current="page">Piatti
-                                <span class="visually-hidden">(current)</span></a>
-                        </li>
-                        <li class="nav-item btn btn-danger m-2">
-                            <a class="nav-link active text-white fs-5" href="{{ route('admin.barchart.index') }}"
-                                aria-current="page">Statistiche
-                                <span class="visually-hidden">(current)</span></a>
-                        </li>
+
                     </ul>
 
 
