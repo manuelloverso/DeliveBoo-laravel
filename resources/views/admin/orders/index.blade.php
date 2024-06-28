@@ -7,15 +7,14 @@
                 aria-hidden="true"></i></a>
 
         <h1 class="py-4">Tabella degli ordini ricevuti</h1>
+        <p>Ordini Totali: {{ $orders->total() }}</p>
 
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">N° ordine</th>
                         <th scope="col">Data ordine</th>
                         <th scope="col">Cliente</th>
-                        <th scope="col">Stato Ordine</th>
                         <th>Totale</th>
                         <th scope="col">Vedi Ordine</th>
                     </tr>
@@ -28,10 +27,9 @@
                     @else
                         @foreach ($orders as $order)
                             <tr class="">
-                                <td scope="row">{{ $order->id }}</td>
-                                <td>{{ $order->created_at }}</td>
+
+                                <td>{{ date('d-m-Y h:m', strtotime($order->created_at)) }}</td>
                                 <td>{{ $order->customer_name }} {{ $order->customer_lastname }}</td>
-                                <td>{{ $order->status }}</td>
                                 <td>{{ $order->total }}€</td>
                                 <td><a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-primary"><i
                                             class="fa-solid fa-eye"></i></a></td>

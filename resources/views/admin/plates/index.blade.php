@@ -85,7 +85,8 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body text-dark">Sei sicuro di voler eliminare questo piatto?
+                                        <div class="modal-body text-dark">Sei sicuro di voler eliminare
+                                            <strong>{{ $plate->name }}</strong>?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
