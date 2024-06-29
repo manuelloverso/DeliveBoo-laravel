@@ -57,30 +57,31 @@
             <div class="d-flex gap-4 pt-4 resp_card">
 
                 <div class="card col-6">
-                    <div class="card-title">
+                    <a href="{{ route('admin.plates.create') }}">
 
-                        <div class="text-center my-4">
-                            <h2>Il tuo Menù</h2>
+                        <div class="card-title">
+
+                            <div class="text-center my-4">
+                                <h2>Aggiungi un piatto</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body ">
-                        Gestisci i tuoi piatti
+                    </a>
 
-                    </div>
                 </div>
 
                 <div class="card col-6 ">
-                    <div class="card-title">
+                    <a href="{{ route('admin.orders.show', $lastOrder->id) }}">
 
-                        <div class="text-center my-4">
-                            <h2>I Tuoi Ordini</h2>
+                        <div class="card-title">
+
+                            <div class="text-center my-4">
+                                <h2>Ultimo ordine ricevuto</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        Gestisci i tuoi Ordini
 
-                    </div>
                 </div>
+                </a>
+
             </div>
 
 

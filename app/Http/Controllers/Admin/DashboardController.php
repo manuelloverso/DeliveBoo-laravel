@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class DashboardController extends Controller
 {
@@ -12,13 +14,16 @@ class DashboardController extends Controller
     {
         $user = auth()->user();
         $restaurant = $user->restaurant;
-        $orders = $restaurant->orders->sortByDesc('id');
+        $orders = $restaurant->orders->sortByDesc('created_at');
         $plates = $restaurant->plates;
         $plateData = [
             'labels' => [],
             'data' => []
         ];
-        //dd($plate);
+
+        $order = DB::table('orders')->where('restaurant_id', $restaurant->id)->orderByDesc('created_at')->paginate(12);
+        ;
+        $lastOrder = $order[0];
 
 
         // Grafico ordini per mese
@@ -45,7 +50,7 @@ class DashboardController extends Controller
         $types = Type::all();
         $user = auth()->user();
         if ($user->restaurant) {
-            return view('admin.dashboard', compact('user', 'data', 'plates', 'plateData'));
+            return view('admin.dashboard', compact('user', 'data', 'plates', 'plateData', 'lastOrder'));
         } else {
             return view('admin.restaurants.create', compact('types'));
         }
