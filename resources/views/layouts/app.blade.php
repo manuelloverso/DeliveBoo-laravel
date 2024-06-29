@@ -50,18 +50,18 @@
 
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0 w-100">
                         <li class="nav-item btn btn-success m-2">
-                            <a class="nav-link active text-white fs-5 " href="{{ route('admin.orders.index') }}"
-                                aria-current="page">Ordini
+                            <a class="nav-link active text-white fs-5 " href="{{ route('admin.dashboard') }}"
+                                aria-current="page">Dashboard
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item btn btn-light m-2">
                             <a class="nav-link active fs-5" href="{{ route('admin.plates.index') }}"
-                                aria-current="page">Piatti
+                                aria-current="page">Il Tuo Menù
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item btn btn-danger m-2">
-                            <a class="nav-link active text-white fs-5" href="{{ route('admin.barchart.index') }}"
-                                aria-current="page">Statistiche
+                            <a class="nav-link active text-white fs-5" href="{{ route('admin.orders.index') }}"
+                                aria-current="page">I Tuoi Ordini
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
                     </ul>
