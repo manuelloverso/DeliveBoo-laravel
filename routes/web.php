@@ -22,23 +22,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/mailable', function () {
-    /* $lead = [
-        'name' => 'Fabio',
-        'email' => 'fabio@example.com',
-        'message' => 'lorem ipsum dolor hi'
-    ]; */
-
-    $lead = [
-
-        'address' => 'hi',
-        'message' => 'eivjwnri',
-    ];
-
-
-
-    return new App\Mail\NewMail($lead);
-});
 
 Route::middleware(['auth', 'verified'])
     ->name('admin.')

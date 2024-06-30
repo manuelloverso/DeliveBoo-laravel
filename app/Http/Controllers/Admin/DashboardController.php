@@ -21,9 +21,12 @@ class DashboardController extends Controller
             'data' => []
         ];
 
-        $order = DB::table('orders')->where('restaurant_id', $restaurant->id)->orderByDesc('created_at')->paginate(12);
-        ;
-        $lastOrder = $order[0];
+        $order = DB::table('orders')->where('restaurant_id', $restaurant->id)->orderByDesc('created_at')->paginate(12);;
+        if ($order) {
+            $lastOrder = $order[0];
+        } else {
+            $lastOrder = null;
+        }
 
 
         // Grafico ordini per mese

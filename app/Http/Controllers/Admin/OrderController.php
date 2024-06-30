@@ -25,8 +25,6 @@ class OrderController extends Controller
 
         //dd($orders);
 
-
-
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -51,6 +49,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $user = auth()->user();
+        $restaurant_id = $user->restaurant->id;
         $data = [];
         $pivot = DB::table('order_plate')->where('order_id', $order->id)->get();
         foreach ($order->plates as $plate) {
@@ -72,7 +72,11 @@ class OrderController extends Controller
 
         $plates = json_encode($data);
 
-        return view('admin.orders.show', compact('plates', 'order'));
+        if ($order->restaurant_id == $restaurant_id) {
+            return view('admin.orders.show', compact('plates', 'order'));
+        } else {
+            abort(404);
+        }
     }
 
     /**

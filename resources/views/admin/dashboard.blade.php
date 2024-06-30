@@ -68,19 +68,21 @@
                     </a>
 
                 </div>
+                @if ($lastOrder)
+                    <div class="card col-6 ">
+                        <a href="{{ route('admin.orders.show', $lastOrder->id) }}">
 
-                <div class="card col-6 ">
-                    <a href="{{ route('admin.orders.show', $lastOrder->id) }}">
+                            <div class="card-title">
 
-                        <div class="card-title">
-
-                            <div class="text-center my-4">
-                                <h2>Ultimo ordine ricevuto</h2>
+                                <div class="text-center my-4">
+                                    <h2>Ultimo ordine ricevuto</h2>
+                                </div>
                             </div>
-                        </div>
 
-                </div>
-                </a>
+                        </a>
+                    </div>
+                @endif
+
 
             </div>
 
