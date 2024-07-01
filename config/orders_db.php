@@ -93,10 +93,6 @@ return [
             "total" => "110.00",
             "date" => "2024-3-12"
         ],
-
-
-        //dddddddfòdflmgèkfjgè+kpfngèwdkfjgnwpdfkng+wpdfkng+wpkdfng+wpk
-
         [
             "restaurant_id" => "1",
             "customer_name" => "Giacomo",
@@ -304,7 +300,7 @@ return [
             "customer_email" => "elicor@gmail.com",
             "status" => "spedito",
             "total" => "69.00",
-            "date" => "2024-7-25"
+            "date" => "2023-7-25"
         ],
         [
             "restaurant_id" => "1",
@@ -315,7 +311,7 @@ return [
             "customer_email" => "elican@gmail.com",
             "status" => "spedito",
             "total" => "90.00",
-            "date" => "2024-7-2"
+            "date" => "2023-7-2"
         ],
         [
             "restaurant_id" => "1",
@@ -326,7 +322,7 @@ return [
             "customer_email" => "chiappa@gmail.com",
             "status" => "spedito",
             "total" => "28.00",
-            "date" => "2024-7-17"
+            "date" => "2023-7-17"
         ],
         [
             "restaurant_id" => "1",
@@ -337,7 +333,7 @@ return [
             "customer_email" => "blanco@gmail.com",
             "status" => "spedito",
             "total" => "85.00",
-            "date" => "2024-8-1"
+            "date" => "2023-8-1"
         ],
         [
             "restaurant_id" => "1",
@@ -348,7 +344,7 @@ return [
             "customer_email" => "cose@gmail.com",
             "status" => "spedito",
             "total" => "52.00",
-            "date" => "2024-8-18"
+            "date" => "2023-8-18"
         ],
         [
             "restaurant_id" => "1",
@@ -359,7 +355,7 @@ return [
             "customer_email" => "ligu@gmail.com",
             "status" => "spedito",
             "total" => "159.00",
-            "date" => "2024-8-25"
+            "date" => "2023-8-25"
         ],
     ]
 ];
