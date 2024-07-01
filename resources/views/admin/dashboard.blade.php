@@ -121,7 +121,7 @@
             data: {
                 labels: @json($dataSell['labels']),
                 datasets: [{
-                    label: 'N° Vendite',
+                    label: 'Profitti €',
                     data: @json($dataSell['data']),
                     backgroundColor: 'rgba(255, 0, 0, 0.5)',
                     borderColor: 'rgba(255, 0, 0, 1)',

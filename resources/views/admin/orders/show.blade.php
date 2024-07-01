@@ -15,7 +15,7 @@ $plateList = json_decode($plates);
                 <h1 class="py-4">Dettagli ordine</h1>
             </div>
             <div class="card-body">
-                <h5 class="text-secondary pb-4">Ordine n°{{ $order->id }} del
+                <h5 class="text-secondary pb-4">Ordine del
                     {{ date('d-m-Y h:m', strtotime($order->created_at)) }}</h5>
 
                 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4">
