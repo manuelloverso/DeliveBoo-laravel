@@ -15,7 +15,8 @@ $plateList = json_decode($plates);
                 <h1 class="py-4">Dettagli ordine</h1>
             </div>
             <div class="card-body">
-                <h5 class="text-secondary pb-4">Ordine n°{{ $order->id }} del {{ $order->created_at }}</h5>
+                <h5 class="text-secondary pb-4">Ordine n°{{ $order->id }} del
+                    {{ date('d-m-Y h:m', strtotime($order->created_at)) }}</h5>
 
                 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4">
                     <div class="col">
@@ -74,30 +75,30 @@ $plateList = json_decode($plates);
                                                 <th scope="col">Cognome</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Telefono</th>
-                                                
+
 
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                          
-                                                <tr class="">
-                                                    <td scope="row">{{ $order->customer_name }}</td>
-                                                    <td>{{ $order->customer_lastname }}</td>
-                                                    <td>{{ $order->customer_email }}</td>
-                                                    <td>{{ $order->customer_phone }}</td>
-                                                    
 
-                                                </tr>
-                                            
+                                            <tr class="">
+                                                <td scope="row">{{ $order->customer_name }}</td>
+                                                <td>{{ $order->customer_lastname }}</td>
+                                                <td>{{ $order->customer_email }}</td>
+                                                <td>{{ $order->customer_phone }}</td>
+
+
+                                            </tr>
+
 
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="card-footer text-body-secondary">
-                                <tr >
-                                   <td><strong>Indirizzo di consegna: </strong>{{ $order->customer_address }}</td> 
+                                <tr>
+                                    <td><strong>Indirizzo di consegna: </strong>{{ $order->customer_address }}</td>
                                 </tr>
                             </div>
                         </div>
