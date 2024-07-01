@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
+
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,7 +31,17 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return to_route('admin.dashboard');
+        $user = auth()->user();
+        $restaurant = $user->restaurant;
+        $order = DB::table('orders')->where('restaurant_id', $restaurant->id)->orderByDesc('created_at')->paginate(12);
+        //dd($order->total());
+
+        if ($order->total() == 0) {
+            return to_route('admin.dashboard');
+        } else {
+            return to_route('admin.orders.index');
+        }
+
     }
 
     /**
