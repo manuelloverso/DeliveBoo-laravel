@@ -12,7 +12,10 @@
     <div class="info">
         @if ($lead['target'] == 'restaurant')
             <h3>Informazioni Cliente</h3>
-            <p><strong>Ordine Numero: </strong>{{ $lead['order_id'] }}</p>
+            <p><strong>Nominativo Cliente: </strong>
+                <span>{{ $lead['customer_name'] }}</span>
+                <span> {{ $lead['customer_lastname'] }}</span>
+            </p>
             <p><strong>Email: </strong>{{ $lead['customer_email'] }}</p>
             <p><strong>Indirizzo: </strong>{{ $lead['customer_address'] }}</p>
             <p><strong>Num. di telefono: </strong>{{ $lead['customer_phone'] }}</p>
