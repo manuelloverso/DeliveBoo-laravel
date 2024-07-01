@@ -4,10 +4,10 @@
     <div class="container py-4">
         <div class="d-flex py-2">
             <span class="">
-                <a class="btn btn-secondary" href="{{ route('admin.plates.index') }}"><i class="fa fa-arrow-circle-left"
+                <a class="btn" href="{{ route('admin.plates.index') }}"><i class="fa fa-arrow-circle-left"
                         aria-hidden="true"></i></a>
             </span>
-            <div class="px-2"></div>
+            <div class="p-2"></div>
             <h1 class="">Aggiungi un nuovo piatto</h1>
         </div>
         @include('partials.message-error')
@@ -15,7 +15,7 @@
             @csrf {{-- this is a laravel directive to protect your application from cross-site request forgery --}}
 
             {{-- name input --}}
-            <div class="mb-3">
+            <div class="mb-3 mt-4">
                 <label for="name" class="form-label">Nome <span class="text-danger">*</span></label>
                 <input type="text" required name="name" id="name"
                     class="form-control @error('name') is-invalid @enderror" placeholder="aggiungi il nome del piatto"

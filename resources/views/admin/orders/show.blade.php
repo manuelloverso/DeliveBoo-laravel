@@ -10,14 +10,14 @@ $plateList = json_decode($plates);
         <a class="btn mt-4 mb-2" href="{{ route('admin.orders.index') }}"><i class="fa fa-arrow-circle-left"
                 aria-hidden="true"></i></a>
 
-        <div class="card p-4">
+        <div class="card p-3">
             <div class="card-title">
                 <h1 class="py-4">Dettagli ordine</h1>
             </div>
             <div class="card-body">
                 <h5 class="text-secondary pb-4">Ordine n°{{ $order->id }} del {{ $order->created_at }}</h5>
 
-                <div class="row row-cols-1 row-cols-md-2 ">
+                <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4">
                     <div class="col">
 
                         <div class="card text-center">

@@ -46,21 +46,21 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="collapsibleNavId">
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
 
-                    <ul class="navbar-nav me-auto mt-2 mt-lg-0 w-100">
+                    <ul class="navbar-nav mt-2 mt-lg-0 w-100 justify-content-center">
                         <li class="nav-item btn btn-success m-2">
-                            <a class="nav-link active text-white fs-5 " href="{{ route('admin.dashboard') }}"
+                            <a class="nav-link active text-white fs-6 " href="{{ route('admin.dashboard') }}"
                                 aria-current="page">Dashboard
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item btn btn-light m-2">
-                            <a class="nav-link active fs-5" href="{{ route('admin.plates.index') }}"
+                            <a class="nav-link active fs-6" href="{{ route('admin.plates.index') }}"
                                 aria-current="page">Il Tuo Menù
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item btn btn-danger m-2">
-                            <a class="nav-link active text-white fs-5" href="{{ route('admin.orders.index') }}"
+                            <a class="nav-link active text-white fs-6" href="{{ route('admin.orders.index') }}"
                                 aria-current="page">I Tuoi Ordini
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
