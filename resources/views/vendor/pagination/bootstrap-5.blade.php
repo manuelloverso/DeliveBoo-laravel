@@ -1,4 +1,16 @@
 @if ($paginator->hasPages())
+    <div>
+        <p class="small text-muted">
+            {!! __('Ordini da N.') !!}
+            <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
+            {!! __('a') !!}
+            <span class="fw-semibold">{{ $paginator->lastItem() }}</span>
+            {!! __('di') !!}
+            <span class="fw-semibold">{{ $paginator->total() }}</span>
+            {!! __('totali') !!}
+        </p>
+    </div>
+
     <nav class="d-flex justify-items-center justify-content-between">
         <div class="d-flex justify-content-between flex-fill d-sm-none">
             <ul class="pagination">
@@ -28,17 +40,6 @@
         </div>
 
         <div class="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
-            <div>
-                <p class="small text-muted">
-                    {!! __('Ordini da N.') !!}
-                    <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
-                    {!! __('a') !!}
-                    <span class="fw-semibold">{{ $paginator->lastItem() }}</span>
-                    {!! __('di') !!}
-                    <span class="fw-semibold">{{ $paginator->total() }}</span>
-                    {!! __('totali') !!}
-                </p>
-            </div>
 
             <div>
                 <ul class="pagination">

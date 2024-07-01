@@ -6,8 +6,8 @@ $plateList = json_decode($plates);
 
 @extends('layouts.app')
 @section('content')
-    <div class="container">
-        <a class="btn mt-4 mb-2" href="{{ route('admin.orders.index') }}"><i class="fa fa-arrow-circle-left"
+    <div class="container py-4">
+        <a class="btn  mb-2" href="{{ route('admin.orders.index') }}"><i class="fa fa-arrow-circle-left"
                 aria-hidden="true"></i></a>
 
         <div class="card p-3">
