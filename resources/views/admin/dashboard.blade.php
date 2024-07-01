@@ -2,19 +2,21 @@
 
 @section('content')
     <div class="container">
-        <div class="row py-4 justify-content-center">
+        <div class="row align-items-center  py-4 ">
 
-            <div class="d-flex gap-4 pt-4 resp_card">
 
-                <div class="card col-6 ">
+            <div class="col-12 col-md-6 mb-4">
+                <div class="card">
                     <div class="text-center my-4">
                         <h1>Dashboard "{{ $restaurant->restaurant_name }}"</h1>
                     </div>
-                    <div class="card-body">
-
-                    </div>
                 </div>
-                <div class="card col-6 ">
+            </div>
+
+
+            <div class="col col-12 col-md-6 mb-4">
+
+                <div class="card">
 
                     <div class="card-body">
                         <div><strong>Indirizzo: </strong>{{ $restaurant->address }}</div>
@@ -24,13 +26,11 @@
 
                     </div>
                 </div>
-
-
             </div>
 
-            <div class="d-flex gap-4 pt-4 resp_card">
+            <div class="col col-12 d-flex gap-4 pt-4 mb-4 resp_card">
 
-                <div class="card col-6 bg-warning">
+                <div class="card col bg-warning">
                     <a class="text-decoration-none" href="{{ route('admin.plates.create') }}">
                         <div class="card-title">
                             <div class="text-center text-dark  my-4">
@@ -41,7 +41,7 @@
 
                 </div>
                 @if ($lastOrder)
-                    <div class="card col-6 bg-warning">
+                    <div class="card col bg-warning">
                         <a class="text-decoration-none" href="{{ route('admin.orders.show', $lastOrder->id) }}">
                             <div class="card-title">
                                 <div class="text-center text-dark my-4">
@@ -54,9 +54,9 @@
 
 
             </div>
-            <div class="d-flex gap-4 pt-4 resp_card">
 
-                <div class="card col-6">
+            <div class="col col-12 col-md-6">
+                <div class="card col mb-4">
                     <div class="text-center my-4">
                         <h2>Ordini degli ultimi 12 mesi</h2>
                         <div class="mb-4" style="width: 80%; margin: auto;">
@@ -64,22 +64,25 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="card col-6">
+
+            <div class="col col-12 col-md-6">
+
+                <div class="card col mb-4">
                     <div class="text-center my-4">
                         <h2>Vendite degli ultimi 12 mesi</h2>
                         <div class="mb-4" style="width: 80%; margin: auto;">
                             <canvas id="sellChart"></canvas>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
 
 
         </div>
+
+    </div>
     </div>
 
 
