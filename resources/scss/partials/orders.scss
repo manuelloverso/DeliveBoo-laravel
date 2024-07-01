@@ -7,12 +7,17 @@
 
 
     @media (max-width: 468px) {
+
+        td.date {
+            font-size: small;
+        }
+
         .customer-order {
             display: none;
         }
     }
 
-   
 
-   
+
+
 }

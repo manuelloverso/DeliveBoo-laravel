@@ -13,7 +13,7 @@
 
     <nav class="d-flex justify-items-center justify-content-between">
         <div class="d-flex justify-content-between flex-fill d-sm-none">
-            <ul class="pagination">
+            <ul class="pagination ">
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled" aria-disabled="true">
@@ -45,7 +45,7 @@
                 <ul class="pagination">
                     {{-- Previous Page Link --}}
                     @if ($paginator->onFirstPage())
-                        <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+                        <li class="page-item disabled " aria-disabled="true" aria-label="@lang('pagination.previous')">
                             <span class="page-link" aria-hidden="true">&lsaquo;</span>
                         </li>
                     @else

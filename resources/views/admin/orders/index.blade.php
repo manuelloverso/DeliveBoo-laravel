@@ -2,12 +2,12 @@
 
 @section('content')
 
-    <div class="container p-4 ">
+    <div class="container py-4 ">
         <a class="btn mb-2 " href="{{ route('admin.dashboard') }}"><i class="fa fa-arrow-circle-left"
                 aria-hidden="true"></i></a>
 
         <div class="container table-order ">
-            <div class="card p-4">
+            <div class="card p-3">
 
                 <div class="card-title">
                     <h1 class="py-4">Ordini ricevuti</h1>
@@ -33,7 +33,7 @@
                                     @foreach ($orders as $order)
                                         <tr class="">
 
-                                            <td>{{ date('d-m-Y h:m', strtotime($order->created_at)) }}</td>
+                                            <td class="date">{{ date('d-m-Y h:m', strtotime($order->created_at)) }}</td>
                                             <td class="customer-order">{{ $order->customer_name }}
                                                 {{ $order->customer_lastname }}</td>
                                             <td>{{ $order->total }}€</td>
