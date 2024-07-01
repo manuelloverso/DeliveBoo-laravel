@@ -67,7 +67,7 @@ $plateList = json_decode($plates);
                                 <h3>Informazioni cliente</h3>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
+                                <div class="table-responsive customer">
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -75,25 +75,23 @@ $plateList = json_decode($plates);
                                                 <th scope="col">Cognome</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Telefono</th>
-
-
-
                                             </tr>
                                         </thead>
                                         <tbody>
-
                                             <tr class="">
                                                 <td scope="row">{{ $order->customer_name }}</td>
                                                 <td>{{ $order->customer_lastname }}</td>
                                                 <td>{{ $order->customer_email }}</td>
                                                 <td>{{ $order->customer_phone }}</td>
-
-
                                             </tr>
-
-
                                         </tbody>
                                     </table>
+                                </div>
+                                <div class="customer-list">
+                                    <div><strong>Nome: </strong>{{ $order->customer_name }}</div>
+                                    <div><strong>Cognome: </strong>{{ $order->customer_lastname }}</div>
+                                    <div><strong>Email: </strong>{{ $order->customer_email }}</div>
+                                    <div><strong>Telefono: </strong>{{ $order->customer_phone }}</div>
                                 </div>
                             </div>
                             <div class="card-footer text-body-secondary">
@@ -102,7 +100,6 @@ $plateList = json_decode($plates);
                                 </tr>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
