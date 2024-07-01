@@ -4,7 +4,22 @@
         height: 100px;
         width: 100px;
         object-fit: cover;
-        
+        border-radius: 20px;
     
     }
+
+   @media (max-width: 440px){
+    .id-plate, .img-plate{
+        display: none;
+    }
+
+    .fa-solid{
+        margin-bottom: 5px;
+    }
+
+    .card{
+        font-size: 13.8px;
+    }
+
+   }
 }
