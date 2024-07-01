@@ -24,7 +24,7 @@
                     <table class="table table-responsive">
                         <thead>
                             <tr>
-                                <th class="text-center id-plate" scope="col">Id</th>
+                                
                                 <th scope="col" class=" img-plate">Immagine</th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">Prezzo</th>
@@ -35,8 +35,6 @@
                         <tbody>
                             @foreach ($plates as $index => $plate)
                                 <tr class="align-middle">
-
-                                    <td class="text-center id-plate" scope="row">{{ $index + 1 }}</td>
 
                                     <td class="img-plate">
                                         @if (Str::startsWith($plate->image, 'https://'))
